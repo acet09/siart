@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>선인art(제작중)</title>
+  <title>선인art</title>
   <link rel="shortcut icon" href="./images/etc/SIfavicon.png" type="image/icon">
   <link rel="stylesheet" href="./css/reset.css" type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-  <link rel="stylesheet" href="./css/style.css" type="text/css">  
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
   <link rel="stylesheet" href="./css/size.css" type="text/css">
   <script src="https://kit.fontawesome.com/a60ed959b1.js" crossorigin="anonymous"></script>
   <script src="lib/jquery-3.6.0.min.js"></script>
@@ -20,7 +20,7 @@
 <body>
   <div id="wrap">
     <!-- HEADER -->
-    <header class="trigger-menu-wrapper">
+    <header id="header" class="trigger-menu-wrapper">
       <div class="headertop">
         <div class="headertop__cover">
           <div><a href="">
@@ -403,7 +403,7 @@
               </p>
             </div>
           </div>
-          <div class="swiper-btnlist prevbox">
+          <div class="swiper-btnlist prevbox swiper-prevpagi">
             <svg class="swiper-button swiper-button-prev banner-prev prevbutton" viewBox="0 100 100 100">
               <path class="line" d="M50,290 Q50,100 50,10">
                 <animate attributeName="d" begin="banneroverlayprev.mouseover" dur="0.3s" fill="freeze"
@@ -415,7 +415,7 @@
             </svg>
             <p class="swiper-sidetext prevtext">PREV</p>
           </div>
-          <div class="swiper-btnlist nextbox">
+          <div class="swiper-btnlist nextbox swiper-nextpagi">
             <svg class="swiper-button swiper-button-next banner-next nextbutton" viewBox="0 100 100 100">
               <path class="line" d="M50,290 Q50,100 50,10">
                 <animate attributeName="d" begin="banneroverlaynext.mouseover" dur="0.3s" fill="freeze"
@@ -430,7 +430,7 @@
         </div>
       </div>
       <!-- SI STORY -->
-      <section id="story" class="section">
+      <section id="story">
         <h2 class="se--title">SI STORY</h2>
         <div class="swiper-story-box">
           <div class="swiper mySwiper-story">
@@ -518,7 +518,7 @@
       <!-- CONTENT-MIDDLE -->
       <div id="content__middle" class="content__middle">
         <!-- SI COLLECTION -->
-        <section id="collection" class="section">
+        <section id="collection">
           <h2 class="se--title">SI COLLECTION</h2>
           <div class="tab__text">
             <a href="#" class="active">NEW</a>
@@ -561,7 +561,7 @@
                     <div class="tab--bottom">
                       <span>자신만의 개성있는 작품을 완성하세요.</span>
                     </div>
-                    <a href="#" button class="tab--btn">
+                    <a href="#" class="tab--btn">
                       <span>view</span>
                     </a>
                   </div>
@@ -691,8 +691,8 @@
             <div class="swiper-scrollbar best-scroll"></div>
           </div>
         </section>
-        <!--- SI NEWS --->
-        <section id="news" class="section">
+        <!-- SI NEWS -->
+        <section id="news">
           <h2 class="se--title">SI NEWS</h2>
           <div class="swiper-news-box">
             <div class="news__text">
@@ -722,7 +722,7 @@
         </section>
       </div>
       <!-- SI SNS -->
-      <section id="sns" class="section">
+      <section id="sns">
         <h2 class="se--title">SI SNS</h2>
         <div class="sns__itemlist">
           <div class="sns__items">
@@ -780,17 +780,146 @@
           </a>
         </div>
       </section>
-
-
-      <!-- SI MAPS(GOOGLE API) -->
-      <section id="maps" class="section"></section>
-      
+      <!-- SI MAPS -->
+      <div id="maps">
+        <div class="maps__area">
+          <div class="maps__img">
+            <img src="./images/section/maps/maps_img.jpg" alt="mapsimage">
+          </div>
+          <div class="maps__inner">
+            <div class="maps__search">
+              <p class="maps__text">
+                현재 고객님과 가까운<br>매장을 안내해 드립니다.
+              </p>
+              <p class="maps__input">
+                <input type="text" placeholder="매장명 및 지역 검색" class="maps__input--bar">
+                <a href="#" class="maps__input--btn">
+                  <i class="fa-solid fa-magnifying-glass">
+                    <span class="ir-text">검색</span>
+                  </i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- SI INFO -->
-      <section id="info" class="section"></section>
+      <div id="info">
+        <a href="#">
+          <span>제품 메뉴얼</span>
+        </a>
+        <a href="#">
+          <span>A/S 및 상담</span>
+        </a>
+        <a href="#">
+          <span>자주 묻는 질문</span>
+        </a>
+      </div>
+      <!-- attach -->
+      <div id="attach">
+        <div class="attach__left">
+          <div>
+            <strong>고객센터</strong>
+            <p>1599-7121</p>
+            <span>(09:30~18:30, 토요일&공휴일 휴무)</span>
+          </div>
+          <div>
+            <strong>A/S 문의</strong>
+            <p>080-735-7123</p>
+            <span>(09:30~18:30, 토요일&공휴일 휴무)</span>
+          </div>
+        </div>
+        <div class="attach__right">
+          <p>언제 어디서든 선인화구의<br>
+            최신 소식을 SH.APP으로 만나보세요!
+          </p>
+          <div class="attach__btn">
+            <a href="#">
+              <span>APP STORE</span>
+            </a>
+            <a href="#">
+              <span>GOOGLE PLAY</span>
+            </a>
+          </div>
+          <a href="#"></a>
+        </div>
+      </div>
+      <!-- topbutton -->
+      <div id="topbtn">
+        <div class="topbtn__content">
+          <div class="topbtn__cover">
+            <a href="#" class="top--move">TOP</a>
+            <a href="#" class="side--open"></a>
+          </div>
+          <div class="topbtn__sidemenu">
+            <div class="topbtn__sidemenu--top">          
+              <p>신한화구의 다양한<br> 
+                제품을 카탈로그를 통해<br> 
+                만나보세요.</p>
+              <a href="#">카탈로그 다운로드</a>    
+            </div>
+            <div class="topbtn__sidemenu--bottom">        
+              <a href="#" class="sideicon__item">
+                <span>
+                  나에게 맞는<br>장비 찾기
+                </span>                
+              </a>      
+              <a href="#" class="sideicon__store">
+                <span>
+                  매장 안내
+                </span>                
+              </a>      
+              <a href="#" class="sideicon__mall">
+                <span>
+                  SI몰 바로가기
+                </span>                
+              </a>      
+            </div>
+            <a href="#" class="side--close">
+              <img src="./images/etc/topbtn-close-24x24.png" alt="close">
+            </a>  
+          </div>
+        </div>        
+      </div>
     </div>
     <!-- FOOTER -->
-    <footer id="footer"></footer>
-    <div class="searchbg"></div>
+    <div id="footer">
+      <div class="footer__link">
+        <a href="#">기업정보</a>
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방법</a>
+        <a href="#">매장개설안내</a>
+        <a href="#">특판사업</a>
+        <a href="#">고객지원</a>
+        <a href="#">구매인증센터</a>
+      </div>
+      <div class="footer__addr">
+        <p>(주)선인화구 대표이사 : 한봉근 / 사업자등록번호 : 122-81-12125</p>
+        <p>
+          경기도 파주시 상자석길 153 / 대표전화 : 02)357-2651 / FAX : 02)357-7481
+        </p>
+        <p>COPYRIGHT (C) SH CORPORATION ALL RIGHTS RESERVED</p>
+      </div>
+      <div class="footer__family">
+        <div class="footer__box">
+          <div class="footer__open">
+            <a href="#">FAMILY SITE</a>
+          </div>
+          <div class="footer__listbox">
+            <a href="#">TOUCH</a>
+            <a href="#">SWC Series</a>
+            <a href="#">SH# ATME</a>
+            <a href="#">SHaMi CosT</a>
+            <a href="#" class="footer__close">
+              <span class=" ir-text">close button</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="searchbg">
+      <span class="ir-text">background</span>
+    </div>
   </div><!-- wrap END -->
 </body>
 

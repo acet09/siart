@@ -67,17 +67,15 @@ const searchfind = document.querySelector('.search--icon');
 
 searchbutton.addEventListener("click", (event) => {
   event.preventDefault();
-  searchbackground.classList.add('searchbg--show');
+  searchbackground.classList.add('show');
   searchbox.classList.add('searchbox--show');
-  searchbackground.classList.remove('searchbg--hide');
   searchbox.classList.remove('searchbox--hide');
 });
 
 searchclose.addEventListener("click", (event) => {
   event.preventDefault();
-  searchbackground.classList.add('searchbg--hide');
   searchbox.classList.add('searchbox--hide');
-  searchbackground.classList.remove('searchbg--show');
+  searchbackground.classList.remove('show');
   searchbox.classList.remove('searchbox--show');
 });
 
@@ -317,3 +315,83 @@ var swiperBullet = new Swiper(".mySwiper-news", {
     }
   },
 });    
+
+
+//  *** footer family menu ***
+const family__open = document.querySelector(".footer__open>a");
+const family__close = document.querySelector(".footer__close");
+const family__menu = document.querySelector(".footer__listbox");
+
+family__open.addEventListener('click', (e) => {
+  e.preventDefault();
+  family__menu.style.height = ('140px');  
+});
+
+family__close.addEventListener('click', (e) => {
+  e.preventDefault();
+  family__menu.style.height = ('0px');
+});
+
+
+// *** top button event ***
+const topbtn = document.getElementById('topbtn');
+const topbtn__text = document.querySelector('.top--move');
+topbtn__text.onclick = (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });  
+}
+
+const topbtn__open = document.querySelector('.side--open');
+const topbtn__close = document.querySelector('.side--close');
+const topbtn__banner = document.querySelector('.topbtn__sidemenu');
+topbtn__open.addEventListener('click', (e) => {
+  e.preventDefault();
+  topbtn__banner.classList.add('active');
+  searchbackground.classList.add('open');
+  topbtn.style.zIndex = '6';
+});
+topbtn__close.addEventListener('click', (e) => {
+  e.preventDefault();
+  topbtn__banner.classList.remove('active');
+  searchbackground.classList.remove('open');
+  topbtn.style.zIndex = '1';
+});
+
+const banner = document.getElementById('banner');
+const banner__height = banner.getBoundingClientRect().height;
+const footer = document.getElementById('footer');
+const footer__height = footer.getBoundingClientRect().height;
+const body__height = document.body.scrollHeight;
+const topbtn__sub = (banner__height + 180 + footer__height);
+
+document.addEventListener('scroll', () => {
+  if (window.scrollY > '0') {
+    topbtn__text.classList.add('hide');
+  } else {
+    topbtn__text.classList.remove('hide');
+  }
+
+  if (window.scrollY >= body__height - topbtn__sub) {
+    topbtn.classList.add('active');
+  } else {  
+    topbtn.classList.remove('active');
+  }
+});
+
+// browser refresh
+window.onload = function() {
+  body.classList.remove('scroll-down');
+  setTimeout (function(){scrollTo(0,0);}, 100);
+}
+
+
+// 구현해야 할것
+// 1. 각 영역에 진입시 숨겨진 메뉴 활성화
+// 각 영역의 top좌표를 getboundingclientrect로 출력 받는
+// 윈도우 top 좌표와 해당위치의 좌표가 일치하면 애니메이션 발생
+
+
+
+
+
+
