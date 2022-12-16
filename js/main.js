@@ -254,9 +254,14 @@ var swiperBullet = new Swiper(".mySwiper-story", {
 
 
 // *** SI COLLECTION ***
+
+// 🎄🎄🎄🎄 해결과제
+// swiper-slide의 가로값을 가져와서
+// scroll 가로값에 적용시키기 (실시간 라이브 등록 구현해야됨) 
+
 // swiper new
 var swiper__new = new Swiper(".mySwiper-new", {
-  spaceBetween: 100,
+  spaceBetween: 50,
   speed: 1000,
   scrollbar: {
     el: ".new-scroll",
@@ -316,6 +321,11 @@ var swiperBullet = new Swiper(".mySwiper-news", {
   },
 });
 
+// maps__searchBTN
+const maps__search = document.querySelector('.maps__input--btn');
+maps__search.addEventListener('click', () => {
+  alert('매장명 및 지역명을 입력해주세요.');
+});
 
 //  *** footer family menu ***
 const family__open = document.querySelector(".footer__open>a");
@@ -382,7 +392,7 @@ document.addEventListener('scroll', () => {
 const options = {
   root: null,
   rootMargin: "0px",
-  threshold: .5,
+  threshold: .4,
 }
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -396,15 +406,15 @@ titleList.forEach(el => observer.observe(el));
 
 
 // *** browser refresh ***
-window.onload = function () {
-  body.classList.remove('scroll-down');
-  setTimeout(function () { 
-    titleList.forEach((items) => {
-      items.classList.remove('active');
-    });
-    scrollTo(0, 0); 
-  }, 100);
-}
+// window.onload = function () {
+//   body.classList.remove('scroll-down');
+//   setTimeout(function () { 
+//     titleList.forEach((items) => {
+//       items.classList.remove('active');
+//     });
+//     scrollTo(0, 0); 
+//   }, 100);
+// }
 
 
 
