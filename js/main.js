@@ -79,6 +79,13 @@ searchclose.addEventListener("click", (event) => {
   searchbox.classList.remove('searchbox--show');
 });
 
+searchbackground.addEventListener('click', (event) => {
+  event.preventDefault();
+  searchbox.classList.add('searchbox--hide');
+  searchbackground.classList.remove('show');
+  searchbox.classList.remove('searchbox--show');
+})
+
 searchfind.addEventListener("click", (event) => {
   event.preventDefault();
   alert("검색어를 입력해주세요.");
@@ -105,6 +112,19 @@ sidemenuclose.addEventListener("click", (event) => {
 
 
 // sidemenu left
+// language text
+const sidemenuLang = document.querySelectorAll('.lang--text');
+for(let i = 0; i < sidemenuLang.length; i++) {
+  sidemenuLang[i].addEventListener('click', (e) => {
+    e.preventDefault();
+    sidemenuLang.forEach((items) => {
+      items.classList.remove('active');
+    });
+    sidemenuLang[i].classList.add('active');
+  });
+}
+
+// sidemenuleft nav
 const sidemenuContents = document.querySelectorAll('.sidemenu__contents');
 const sidemenuBtn = document.querySelectorAll('.sidemenu--maintext');
 const sidemenuBg = document.querySelectorAll('.sidemenu__bg');
