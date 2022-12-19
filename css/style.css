@@ -1432,6 +1432,18 @@ nav {
   line-height: 38px;
 }
 
+.news--mobile {
+  display: none;
+}
+
+.news-next {
+  display: none;
+}
+
+.news-scroll {
+  display: none;
+}
+
 /* swiper */
 .mySwiper-news {
   width: 700px;

@@ -344,10 +344,37 @@
     display: none;
   }
 
+  .news--mobile {
+    display: block;
+  }
+
   .mySwiper-news {
     width: 700px;
   }
 
+  strong.news--mobile { 
+    font-size: 31px; 
+    margin-top: 20px;
+  }
+  
+  p.news--mobile { 
+    font-size: 34px;
+    font-weight: 300;
+    margin-top: 15px;
+  }
+
+  .news-next {
+    display: block;
+  }
+  
+  .news-scroll .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+    display: block;
+    position: unset;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 130px;
+  }
+  
   /* sns */
   .sns__itemlist {
     width: 650px;

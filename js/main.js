@@ -334,6 +334,12 @@ var swiperBullet = new Swiper(".mySwiper-news", {
       return '<div class="' + className + '"><strong> EVENT </strong><br><span>' + (news__bullet[index]) + '</span></div>';
     }
   },
+  navigation: {
+    nextEl: ".news-next",
+  },
+  scrollbar: {
+    el: ".news-scroll",
+  },
 });
 
 // maps__searchBTN
