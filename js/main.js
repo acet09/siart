@@ -274,11 +274,6 @@ var swiperBullet = new Swiper(".mySwiper-story", {
 
 
 // *** SI COLLECTION ***
-
-// 🎄🎄🎄🎄 해결과제
-// swiper-slide의 가로값을 가져와서
-// scroll 가로값에 적용시키기 (실시간 라이브 등록 구현해야됨) 
-
 // swiper new
 var swiper__new = new Swiper(".mySwiper-new", {
   spaceBetween: 50,
