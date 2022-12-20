@@ -149,9 +149,15 @@
   }
 
   /* maps */
+  
+  #info {
+    transform: translate(10%, -13px);
+  }
+
   .maps__inner {
     width: 90%;
   }
+
 
   /* attach */
   .attach__right {
@@ -336,6 +342,10 @@
   }
 
   /* news */
+  .swiper-news-box {
+    width: 700px;
+  }
+
   .news__text {
     display: none;
   }
@@ -349,7 +359,7 @@
   }
 
   .mySwiper-news {
-    width: 700px;
+    width: 100%;
   }
 
   strong.news--mobile { 
@@ -365,14 +375,26 @@
 
   .news-next {
     display: block;
+    width: 90px;
+    height: 16px;
+    top: auto;
+    bottom: 55px;
+    left: 0;
+    right: auto;
+    background: url(../images/section/news/next_arrow.png) no-repeat center / cover;
+    outline: none;
   }
   
+  #news .swiper-button-next:after, .swiper-button-prev:after {
+    display: none;
+  }
+
   .news-scroll .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
     display: block;
     position: unset;
     width: 700px;
     margin: 0 auto;
-    margin-top: 130px;
+    margin-top: 120px;
   }
   
   /* sns */
@@ -380,6 +402,40 @@
     width: 650px;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* map */
+  #maps {
+    height: 340px;
+    margin-top: 100px;
+  }
+  .maps__img{
+    display: none;
+  }
+  
+  .maps__inner {
+    width: 100%;
+    position: unset;
+  }
+
+  .maps__search {
+    width: 90%;
+    position: unset;
+    float: right;
+  }
+
+  .maps__text {
+    text-align: left;
+  }
+  .maps__text br{ 
+    display: none;
+  }
+
+  /* info */
+  #info {
+    transform: translate(10%, 0);
+    margin-top: 60px;
+  }
+
 }
 
 

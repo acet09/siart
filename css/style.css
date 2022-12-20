@@ -1364,8 +1364,8 @@ nav {
   opacity: 1;
 }
 
-.swiper-scrollbar-drag {
-  background: var(--c-blue1);
+#collection .swiper-scrollbar-drag {
+  background: rgba(255, 85, 85, 0.5);
 }
 
 /* new */
@@ -1505,6 +1505,10 @@ nav {
   opacity: 1;
 }
 
+/* scroll */
+#news .swiper-scrollbar-drag {
+  background: rgba(255, 85, 85, 0.5);
+}
 
 /* --- sns --- */
 #sns {
@@ -2016,7 +2020,7 @@ nav {
 }
 
 .side--open:hover {
-  background: #0099d0;
+  background: rgba(250, 200, 72, 0.5);
 }
 .side--open:hover:before {
   background: var(--c-deepwhite);
