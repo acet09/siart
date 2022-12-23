@@ -41,7 +41,7 @@
       <nav class="maingnb">
         <h1 class="mainlogo">
           <a href="javascript:;">
-            <img src="./images/header/mainlogo/logomarktext.png" alt="mainlogo">
+            <img src="./images/header/mainlogo/logomarktext.png" alt="선인아트">
           </a>
         </h1>
         <div class="navmenu navleft">
@@ -191,13 +191,23 @@
             <div class="search--cover">
               <input class="search--input" type="text" placeholder="궁금하신 제품이나 정보를 빠르게 찾아보세요">
               <a href="javascript:;" class="search--icon">
-                <img src="images/header/searchmenu/gnb-search-btn-27x28.png" alt="검색하기">
+                <img src="images/header/iconmenu/gnb-search-btn-27x28.png" alt="검색하기">
               </a>
               <a href="javascript:;" class="search--close">
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-xmark">
+                  <span class="ir-text">검색창 닫기</span>
+                </i>
               </a>
             </div>
           </div>
+        </div>        
+        <div class="sidemenu__mobile">
+          <a href="javascript:;" class="sidemenu__btn--mobile">
+            <img src="./images/header/iconmenu/paint.png" alt="제품 안내">
+          </a>
+        </div>
+        <div class="sidemenu__mobile__gnb">
+
         </div>
         <div class="sidemenu">
           <a href="javascript:;" class="sidemenu__btn">
@@ -410,32 +420,23 @@
                   <span class="ir-text">전문가용 한국화 채색물감 24색, 18색</span>
                 </a>
               </p>
-            </div>
+            </div>            
           </div>
-          <div class="swiper-btnlist prevbox swiper-prevpagi">
-            <svg class="swiper-button swiper-button-prev banner-prev prevbutton" viewBox="0 100 100 100">
-              <path class="line" d="M50,290 Q50,100 50,10">
-                <animate attributeName="d" begin="banneroverlayprev.mouseover" dur="0.3s" fill="freeze"
-                  restart="whenNotActive" from="M50,290 Q50,100 50,10" to="M50,290 Q0,140 50,10" />
-                <animate attributeName="d" begin="banneroverlayprev.mouseout" dur="0.3s" fill="freeze"
-                  restart="whenNotActive" from="M50,290 Q0,140 50,10" to="M50,290 Q50,100 50,10" />
-              </path>
-              <rect id="banneroverlayprev" class="rect--op" width="100%" height="300%" />
-            </svg>
-            <p class="swiper-sidetext prevtext">PREV</p>
-          </div>
-          <div class="swiper-btnlist nextbox swiper-nextpagi">
-            <svg class="swiper-button swiper-button-next banner-next nextbutton" viewBox="0 100 100 100">
-              <path class="line" d="M50,290 Q50,100 50,10">
-                <animate attributeName="d" begin="banneroverlaynext.mouseover" dur="0.3s" fill="freeze"
-                  restart="whenNotActive" from="M50,290 Q50,100 50,10" to="M50,290 Q100,140 50,10" />
-                <animate attributeName="d" begin="banneroverlaynext.mouseout" dur="0.3s" fill="freeze"
-                  restart="whenNotActive" from="M50,290 Q100,140 50,10" to="M50,290 Q50,100 50,10" />
-              </path>
-              <rect id="banneroverlaynext" class="rect--op" width="100%" height="300%" />
-            </svg>
-            <p class="swiper-sidetext nexttext">NEXT</p>
-          </div>
+          <div class="swiper-pagination banner-pagination-mobile"></div>
+        </div>
+        <div class="swiper-button-prev swiper-navi navi-prev banner-prev">
+          <svg class="svg-navi svg-prev">
+            <path class="svg-path" d="M 40 10 Q 40 65 40 140">
+            </path>
+          </svg>
+          <p class="svg-text prev-text">PREV</p>
+        </div>
+        <div class="swiper-button-next swiper-navi navi-next banner-next">
+          <svg class="svg-navi svg-next">
+            <path class="svg-path" d="M 10 10 Q 10 65 10 140">
+            </path>
+          </svg>
+          <p class="svg-text next-text">NEXT</p>
         </div>
       </div>
       <!-- SI STORY -->
@@ -534,31 +535,20 @@
             </div>
           </div>
           <div class="swiper-story-bullet"></div>
-          <div class="swiper-btnlist prevbox">
-            <svg class="swiper-button swiper-button-prev story-prev prevbutton" viewBox="0 100 100 100">
-              <path class="line" d="M50,290 Q50,100 50,10">
-                <animate attributeName="d" begin="storyoverlayprev.mouseover" dur="0.3s" fill="freeze"
-                  restart="whenNotActive" from="M50,290 Q50,100 50,10" to="M50,290 Q0,140 50,10" />
-                <animate attributeName="d" begin="storyoverlayprev.mouseout" dur="0.3s" fill="freeze"
-                  restart="whenNotActive" from="M50,290 Q0,140 50,10" to="M50,290 Q50,100 50,10" />
+          <div class="swiper-button-prev swiper-navi navi-prev story-prev">
+            <svg class="svg-navi svg-prev">
+              <path class="svg-path" d="M 40 10 Q 40 65 40 140">
               </path>
-              <rect id="storyoverlayprev" class="rect--op" width="100%" height="300%" />
             </svg>
-            <p class="swiper-sidetext prevtext">PREV</p>
-          </div>    
-          <div class="swiper-btnlist nextbox">
-            <svg class="swiper-button swiper-button-next story-next nextbutton" viewBox="0 100 100 100">
-              <path class="line" d="M50,290 Q50,100 50,10">
-                <animate attributeName="d" begin="storyoverlaynext.mouseover" dur="0.3s" fill="freeze"
-                  restart="whenNotActive" from="M50,290 Q50,100 50,10" to="M50,290 Q100,140 50,10" />
-                <animate attributeName="d" begin="storyoverlaynext.mouseout" dur="0.3s" fill="freeze"
-                  restart="whenNotActive" from="M50,290 Q100,140 50,10" to="M50,290 Q50,100 50,10" />
+            <p class="svg-text prev-text">PREV</p>
+          </div>  
+          <div class="swiper-button-next swiper-navi navi-next story-next">
+            <svg class="svg-navi svg-next">
+              <path class="svg-path" d="M 10 10 Q 10 65 10 140">
               </path>
-              <rect id="storyoverlaynext" class="rect--op" width="100%" height="300%" />
             </svg>
-            <p class="swiper-sidetext nexttext">NEXT</p>
+            <p class="svg-text next-text">NEXT</p>
           </div>
-          
         </div>
         <a href="javascript:;" class="more--btn">
           more            
@@ -626,33 +616,19 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-btnlist prevbox">
-                <div class="collbtn--cover">
-                  <svg class="swiper-button swiper-button-prev new-prev prevbutton" viewBox="0 100 100 100">
-                    <path class="line" d="M50,290 Q50,100 50,10">
-                      <animate attributeName="d" begin="newoverlayprev.mouseover" dur="0.3s" fill="freeze" restart="whenNotActive"
-                        from="M50,290 Q50,100 50,10" to="M50,290 Q0,140 50,10" />
-                      <animate attributeName="d" begin="newoverlayprev.mouseout" dur="0.3s" fill="freeze" restart="whenNotActive"
-                        from="M50,290 Q0,140 50,10" to="M50,290 Q50,100 50,10" />
-                    </path>
-                    <rect id="newoverlayprev" class="rect--op" width="100%" height="300%" />
-                  </svg>
-                  <p class="swiper-sidetext prevtext">PREV</p>
-                </div>
-              </div>
-              <div class="swiper-btnlist nextbox">
-                <div class="collbtn--cover">
-                  <svg class="swiper-button swiper-button-next new-next nextbutton" viewBox="0 100 100 100">
-                    <path class="line" d="M50,290 Q50,100 50,10">
-                      <animate attributeName="d" begin="newoverlaynext.mouseover" dur="0.3s" fill="freeze" restart="whenNotActive"
-                        from="M50,290 Q50,100 50,10" to="M50,290 Q100,140 50,10" />
-                      <animate attributeName="d" begin="newoverlaynext.mouseout" dur="0.3s" fill="freeze" restart="whenNotActive"
-                        from="M50,290 Q100,140 50,10" to="M50,290 Q50,100 50,10" />
-                    </path>
-                    <rect id="newoverlaynext" class="rect--op" width="100%" height="300%" />
-                  </svg>
-                  <p class="swiper-sidetext nexttext">NEXT</p>
-                </div>
+              <div class="swiper-button-prev swiper-navi navi-prev new-prev">
+                <svg class="svg-navi svg-prev">
+                  <path class="svg-path" d="M 40 10 Q 40 65 40 140">
+                  </path>
+                </svg>
+                <p class="svg-text prev-text">PREV</p>
+              </div>      
+              <div class="swiper-button-next swiper-navi navi-next new-next">
+                <svg class="svg-navi svg-next">
+                  <path class="svg-path" d="M 10 10 Q 10 65 10 140">
+                  </path>
+                </svg>
+                <p class="svg-text next-text">NEXT</p>
               </div>
             </div>
             <div class="tab__swiper--scrollcover">
@@ -722,29 +698,19 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-btnlist prevbox">
-                <svg class="swiper-button swiper-button-prev best-prev prevbutton" viewBox="0 100 100 100">
-                  <path class="line" d="M50,290 Q50,100 50,10">
-                    <animate attributeName="d" begin="bestoverlayprev.mouseover" dur="0.3s" fill="freeze" restart="whenNotActive"
-                      from="M50,290 Q50,100 50,10" to="M50,290 Q0,140 50,10" />
-                    <animate attributeName="d" begin="bestoverlayprev.mouseout" dur="0.3s" fill="freeze" restart="whenNotActive"
-                      from="M50,290 Q0,140 50,10" to="M50,290 Q50,100 50,10" />
+              <div class="swiper-button-prev swiper-navi navi-prev best-prev">
+                <svg class="svg-navi svg-prev">
+                  <path class="svg-path" d="M 40 10 Q 40 65 40 140">
                   </path>
-                  <rect id="bestoverlayprev" class="rect--op" width="100%" height="300%" />
                 </svg>
-                <p class="swiper-sidetext prevtext">PREV</p>
-              </div>
-              <div class="swiper-btnlist nextbox">
-                <svg class="swiper-button swiper-button-next best-next nextbutton" viewBox="0 100 100 100">
-                  <path class="line" d="M50,290 Q50,100 50,10">
-                    <animate attributeName="d" begin="bestoverlaynext.mouseover" dur="0.3s" fill="freeze" restart="whenNotActive"
-                      from="M50,290 Q50,100 50,10" to="M50,290 Q100,140 50,10" />
-                    <animate attributeName="d" begin="bestoverlaynext.mouseout" dur="0.3s" fill="freeze" restart="whenNotActive"
-                      from="M50,290 Q100,140 50,10" to="M50,290 Q50,100 50,10" />
+                <p class="svg-text prev-text">PREV</p>
+              </div>      
+              <div class="swiper-button-next swiper-navi navi-next best-next">
+                <svg class="svg-navi svg-next">
+                  <path class="svg-path" d="M 10 10 Q 10 65 10 140">
                   </path>
-                  <rect id="bestoverlaynext" class="rect--op" width="100%" height="300%" />
                 </svg>
-                <p class="swiper-sidetext nexttext">NEXT</p>
+                <p class="svg-text next-text">NEXT</p>
               </div>
             </div>
             <div class="tab__swiper--scrollcover">

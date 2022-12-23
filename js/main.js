@@ -125,11 +125,11 @@ for(let i = 0; i < sidemenuLang.length; i++) {
 }
 
 // sidemenuleft nav
-const sidemenuContents = document.querySelectorAll('.sidemenu__contents');
-const sidemenuBtn = document.querySelectorAll('.sidemenu--maintext');
-const sidemenuBg = document.querySelectorAll('.sidemenu__bg');
-const sidemenuSub = document.querySelectorAll('.sidemenu__sub');
-const sidemenuLine = document.querySelectorAll('.sidemenu__line>span');
+const sidemenuContents = document.querySelectorAll('.sidemenu__contents'),
+      sidemenuBtn = document.querySelectorAll('.sidemenu--maintext'),
+      sidemenuBg = document.querySelectorAll('.sidemenu__bg'),
+      sidemenuSub = document.querySelectorAll('.sidemenu__sub'),
+      sidemenuLine = document.querySelectorAll('.sidemenu__line>span');
 
 for (let i = 0; i < sidemenuBtn.length; i++) {
   sidemenuBtn[i].addEventListener('mouseenter', (e) => {
@@ -239,6 +239,10 @@ var swiper__banner = new Swiper(".mySwiper--banner", {
     nextEl: ".banner-next",
     prevEl: ".banner-prev",
   },
+  pagination: {
+    clickable: true,
+    el :".banner-pagination-mobile",
+  },
 });
 
 
@@ -289,6 +293,7 @@ var swiper__new = new Swiper(".mySwiper-new", {
   observeParents: true,
 });
 
+
 // swiper best
 var swiper__best = new Swiper(".mySwiper-best", {
   spaceBetween: 100,
@@ -321,6 +326,8 @@ for (let i = 0; i < tab__btn.length; i++) {
     tab__slide[i].classList.add('active');
   });
 }
+
+
 
 
 // *** SI NEWS ***

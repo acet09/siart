@@ -56,7 +56,7 @@
 }
 
 body {
-  font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', sans-serif;
+  font-family: 'Noto Sans KR';
   background: var(--c-deepwhite);
   -webkit-text-size-adjust : 100%;
 }
@@ -156,19 +156,22 @@ header {
   transform: translate(-50%, -50%);
   transition: opacity .3s ease-in-out;
 }
-.mainlogo a img{ 
-  width: 225px;
-  height: 52px;
-}
 
 .mainlogo.logofade {
   opacity: 0;
 }
 
 .mainlogo a {
+  width: 180px;
+  height: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mainlogo a img{ 
+  width: 100%;
+  height: 100%;
 }
 
 /* nav */
@@ -298,6 +301,15 @@ nav {
 
 .iconmenu .fa-bars {
   font-size: 22px;
+}
+
+.iconmenu .sidemenu__mobile {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  z-index: 4;
 }
 
 /* searchmenu */
@@ -696,6 +708,93 @@ nav {
   pointer-events: auto;
 }
 
+/* swiper global navigation option */
+.swiper-navi {
+  width: 80px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  outline: none;
+  cursor: pointer;
+}
+
+.navi-prev {
+  left: 0;
+}
+
+.navi-next {
+  right: 0;
+}
+
+.svg-navi {  
+  position: absolute;
+  width: 50px;
+  height: 100%;
+}
+
+.svg-prev {
+  left: 0;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  display: none;
+  content: '';
+}
+
+.svg-next {
+  right: 0;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  display: none;
+  content: '';
+}
+
+.svg-path {  
+  stroke: var(--c-deepgray);
+  stroke-width: 4;
+  fill: transparent;
+  stroke-linecap: round;
+  transition: 1s;
+}
+
+.svg-text{
+  display: none;
+  position: absolute;
+  top: 50%;
+  color: var(--c-black);
+  font-size: var(--fs-15);
+  font-weight: var(--fw-100);
+}
+
+.prev-text {
+  left: 40px;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.next-text {
+  right: 40px;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* navigation hover option */
+.navi-prev:hover path{
+  d:path("M 40 10 Q 10 65 40 140");
+}
+
+.navi-next:hover path{
+  d:path("M 10 10 Q 40 65 10 140");
+}
+
+.navi-prev:hover .prev-text{
+  display: block;
+}
+
+.navi-next:hover .next-text{
+  display: block;
+}
 
 /* --- banenr --- */
 .se--title {
@@ -750,74 +849,29 @@ nav {
   background-color: transparent;
 }
 
-/* svg pagiantion */
-.swiper-prevpagi {
-  float: left;
-}
 
-.swiper-nextpagi {
-  float: right;
-}
 
-.swiper-btnlist {
-  position: relative;
-  top: -60%;
-  z-index: 1;
-}
 
-.swiper-button {
-  width: 50px;
-  height: 150px;
-  top: 50%;
-}
 
-.line {
-  fill: none;
-  stroke: var(--c-deepgray);
-  stroke-width: 8;
-  stroke-dasharray: 0 1;
-  stroke-linecap: round;
-}
 
-.prevbutton {
-  left: 15px;
-}
+/* 🎈🎈🎈🎈🎈🎈끝 */
 
-.nextbutton {
-  right: 15px;
-}
 
-.rect--op {
-  opacity: 0;
-}
 
-.swiper-sidetext {
-  position: absolute;
-  top: 50px;
-  font-weight: var(--fw-300);
+/* pagination */
+#banner .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
   display: none;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.swiper-btnlist:hover .swiper-sidetext {
-  display: block;
-}
-
-.prevtext {
-  left: 40px;
-  transform: translateY(-50%) rotate(-90deg);
-}
-
-.nexttext {
-  right: 40px;
-  transform: translateY(-50%) rotate(90deg);
 }
 
 /* --- contents --- */
 #contents {
   position: relative;
 }
+
+#collection .line:hover {
+  stroke: blue;
+}
+
 
 .more--btn {
   position: absolute;
@@ -1096,7 +1150,6 @@ nav {
   width: 100%;
   height: auto;
   background: var(--c-alice);
-  /* border: 5px solid red; */
 }
 
 .tab__swiper.active {
@@ -1618,16 +1671,21 @@ nav {
   margin: 0 auto;
 }
 
-.maps__search {
+#maps.observer .maps__search {
   width: 340px;
   height: 340px;
+  padding: 95px 70px 90px 70px;
   position: absolute;
   bottom: 0;
   right: 0;
-  transition: all .5s ease;
-  padding: 95px 70px 90px 70px;
   background-color: var(--c-blue2);
-  overflow: hidden;
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+/* observer.active */
+#maps.observer.active .maps__search {
+  opacity: 1;
 }
 
 .maps__text {
@@ -1675,6 +1733,7 @@ nav {
   background: transparent;
   border: none;
 }
+
 .maps__input--bar::placeholder {
   color: rgb(120, 201, 245);
 }
@@ -1999,6 +2058,7 @@ nav {
 .top--move {
   padding: 20px 0;
   text-align: center;
+  color: var(--c-black);
   font-size: var(--fs-18);
   font-weight: var(--fw-500);
   visibility: hidden;
@@ -2020,7 +2080,7 @@ nav {
 }
 
 .side--open:hover {
-  background: rgba(250, 200, 72, 0.5);
+  background: rgb(250, 200, 72);
 }
 .side--open:hover:before {
   background: var(--c-deepwhite);
