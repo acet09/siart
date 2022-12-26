@@ -1091,6 +1091,9 @@ nav {
   right: 170px;
 }
 
+#collection .svg-text {
+  color: var(--c-deepwhite);
+}
 
 /* observer.active */
 #collection.observer .se--title {

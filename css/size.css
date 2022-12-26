@@ -258,11 +258,11 @@
     background: linear-gradient(transparent 5%, rgb(51, 51, 51) 45%, rgb(51, 51, 51) 50%);
   }
 
-  #story .prevbox {
+  #story .navi-next {
     display: none;
   }
 
-  #story .nextbox {
+  #story .navi-prev {
     display: none;
   }
 

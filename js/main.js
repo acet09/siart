@@ -114,7 +114,7 @@ sidemenuclose.addEventListener("click", (event) => {
 // sidemenu left
 // language text
 const sidemenuLang = document.querySelectorAll('.lang--text');
-for(let i = 0; i < sidemenuLang.length; i++) {
+for (let i = 0; i < sidemenuLang.length; i++) {
   sidemenuLang[i].addEventListener('click', (e) => {
     e.preventDefault();
     sidemenuLang.forEach((items) => {
@@ -126,10 +126,10 @@ for(let i = 0; i < sidemenuLang.length; i++) {
 
 // sidemenuleft nav
 const sidemenuContents = document.querySelectorAll('.sidemenu__contents'),
-      sidemenuBtn = document.querySelectorAll('.sidemenu--maintext'),
-      sidemenuBg = document.querySelectorAll('.sidemenu__bg'),
-      sidemenuSub = document.querySelectorAll('.sidemenu__sub'),
-      sidemenuLine = document.querySelectorAll('.sidemenu__line>span');
+  sidemenuBtn = document.querySelectorAll('.sidemenu--maintext'),
+  sidemenuBg = document.querySelectorAll('.sidemenu__bg'),
+  sidemenuSub = document.querySelectorAll('.sidemenu__sub'),
+  sidemenuLine = document.querySelectorAll('.sidemenu__line>span');
 
 for (let i = 0; i < sidemenuBtn.length; i++) {
   sidemenuBtn[i].addEventListener('mouseenter', (e) => {
@@ -241,7 +241,7 @@ var swiper__banner = new Swiper(".mySwiper--banner", {
   },
   pagination: {
     clickable: true,
-    el :".banner-pagination-mobile",
+    el: ".banner-pagination-mobile",
   },
 });
 
@@ -395,28 +395,37 @@ topbtn__close.addEventListener('click', (e) => {
   topbtn.style.zIndex = '1';
 });
 
-const banner = document.getElementById('banner');
-const banner__height = banner.getBoundingClientRect().height;
-const footer = document.getElementById('footer');
-const footer__height = footer.getBoundingClientRect().height;
-const body__height = document.body.scrollHeight;
-const topbtn__sub = (banner__height + footer__height + 270);
 document.addEventListener('scroll', () => {
   if (window.scrollY > '0') {
     topbtn__text.classList.add('hide');
   } else {
     topbtn__text.classList.remove('hide');
   }
-
-  if (window.scrollY > body__height - topbtn__sub) {
-    topbtn.classList.add('active');
-  } else {
-    topbtn.classList.remove('active');
-  }
 });
 
+// *** topbtn Intersection Observer ***
+const topbtn_op = {
+  root: null,
+  rootMargin: "0px",
+  threshold: .001,
+}
+const topbtn_observer = new IntersectionObserver(entries => {
+  entries.forEach(entries => {
+    if (entries.isIntersecting) {
+      topbtn.classList.add('active');
+    } else {
+      topbtn.classList.remove('active');
+    }
+  });
+}, topbtn_op);
 
-// *** Intersection Observer *** 
+const topbtn_ob = document.querySelectorAll('#footer');
+console.log(topbtn_ob);
+topbtn_ob.forEach(el => topbtn_observer.observe(el));
+
+
+
+// *** section Intersection Observer *** 
 const options = {
   root: null,
   rootMargin: "0px",
@@ -433,14 +442,15 @@ const titleList = document.querySelectorAll('.observer');
 titleList.forEach(el => observer.observe(el));
 
 
+// 반드시 지울것 새로고침 시 상단 이동 코드임🎈
 // *** browser refresh ***
 // window.onload = function () {
 //   body.classList.remove('scroll-down');
-//   setTimeout(function () { 
+//   setTimeout(function () {
 //     titleList.forEach((items) => {
 //       items.classList.remove('active');
 //     });
-//     scrollTo(0, 0); 
+//     scrollTo(0, 0);
 //   }, 100);
 // }
 
