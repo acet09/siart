@@ -615,17 +615,28 @@
     display: none;
   }
 
-  .search__btn {
+  .search{
+    display: none;
+  }
+
+  .searchbg.show {
+    display: none;
+  }
+
+  /* side menu */
+  .sidemenu {
     display: none;
   }
 
   .sidemenu__btn {
+    display: none;
     top: 50%;
     right: 5%;
     transform: translateY(-50%);
   }
 
-  .iconmenu .sidemenu__mobile {
+  .sidemenu__btn--left,
+  .sidemenu__btn--right{
     display: block;
   }
 
@@ -656,14 +667,10 @@
     margin-top: 85px;
   }
 
-  #banner .swiper-prevpagi {
+  #banner .swiper-navi {
     display: none;
   }
   
-  #banner .swiper-nextpagi {
-    display: none;
-  }
-
   #banner .slidebg {
     width: calc(100% - 65px);
   }

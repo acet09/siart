@@ -92,7 +92,7 @@ searchfind.addEventListener("click", (event) => {
 });
 
 
-// sidemenu gnb slide
+// sidemenu gnb(web)
 const sidemenuOpen = document.querySelector('.sidemenu__btn');
 const sidemenugnb = document.querySelector('.sidemenu__gnb');
 const sidemenuclose = document.querySelector('.sidemenu--close');
@@ -100,18 +100,95 @@ const windowscrollLock = document.body;
 
 sidemenuOpen.addEventListener("click", (event) => {
   event.preventDefault();
-  sidemenugnb.style.left = "0%";
+  sidemenugnb.style.cssText = 'left: 0%; transition: all 0.5s ease-out 0s; '
   windowscrollLock.style.overflow = 'hidden'
 });
 
+
 sidemenuclose.addEventListener("click", (event) => {
   event.preventDefault();
-  sidemenugnb.style.left = "100%";
+  sidemenugnb.style.cssText = 'left: 100%; transition: all .5s ease-out 0s; '
   windowscrollLock.style.overflow = 'auto'
 });
 
-
+// sidemenu gnb(mobile)
 // sidemenu left
+const sidemenu_M_BtnLeft = document.querySelector('.sidemenu__btn--left');
+const sidemenu_M_GnbLeft = document.querySelector('.sidemenu__gnb--left');
+const sidemenu_M_bg = document.querySelector('.mobile--bg');
+const sidemenu_M_closeLeft = document.querySelector('.sidemenu--closebtn--left');
+
+sidemenu_M_BtnLeft.addEventListener('click', () => {
+  sidemenu_M_GnbLeft.style.left = ('0%');
+  document.body.style.overflow = 'hidden';
+  sidemenu_M_bg.classList.add('active');
+});
+
+sidemenu_M_closeLeft.addEventListener('click', () => {
+  sidemenu_M_GnbLeft.style.left = ('-100%');
+  document.body.style.overflow = 'auto';
+  sidemenu_M_bg.classList.remove('active');
+});
+
+// sidemenu right
+const sidemenu_M_BtnRight = document.querySelector('.sidemenu__btn--right');
+const sidemenu_M_GnbRight = document.querySelector('.sidemenu__gnb--right');
+const sidemenu_M_closeRight = document.querySelector('.sidemenu--closebtn--right');
+
+sidemenu_M_BtnRight.addEventListener('click', () => {
+  sidemenu_M_GnbRight.style.right = ('0%');
+  document.body.style.overflow = 'hidden';
+  sidemenu_M_bg.classList.add('active');
+});
+
+sidemenu_M_closeRight.addEventListener('click', () => {
+  sidemenu_M_GnbRight.style.right = ('-100%');
+  document.body.style.overflow = 'auto';
+  sidemenu_M_bg.classList.remove('active');
+});
+
+// Side menu events due to window reset
+const bodyWidth = window.innerWidth;
+
+console.log(bodyWidth);
+
+window.addEventListener('resize', () => {
+  const bodyRealWidth = window.innerWidth;
+  document.body.style.overflow = ('auto');
+  if (bodyRealWidth != bodyWidth) {
+    sidemenugnb.style.cssText = 'left: 100%;'
+    sidemenu_M_GnbLeft.style.cssText = 'left: -100%'
+    sidemenu_M_GnbRight.style.cssText = 'right: -100%'
+    sidemenu_M_bg.classList.remove('active');
+  }
+});
+
+// 각 요소에 dom으로 스타일 주면서 transiton 가로변화반응 부분은 제거하여 최대한 빠르게
+// sidemenu를 숨겨주는게 관건이다
+
+
+
+// queryselectorAll로 받은 node.List.forEach 반복문 작성
+// 
+// 🎈🎈🎈🎈🎈 🎈🎈🎈🎈🎈 🎈🎈🎈🎈🎈 🎈🎈🎈🎈🎈 🎈🎈🎈🎈🎈
+// 각각의 sidemenu들은 숨겨진 상태에서 display: none 상태로 만들어
+// 사용자들의 불필요한 tab이동을 막아야됨(display:none으로 숨김상태 오프젝트 다 막아야됨)
+// display + transition 조합(x) , display + animation 조합을 활용해보자
+
+
+// 1. display:none으로 tab키 이동 막기 
+// 2. tab키 focusevent에 반응하는 javascript
+
+// 3. 윈도우width값이 변하면 닫히는 sidemenu 
+//    querySelectorAll -> nodeList 활용하여 반복문 작성
+//                          VS
+//    파라미터 선언된 각 객체마다 직접적으로 스타일 지정
+
+
+
+
+
+// sidemenu left(web)
 // language text
 const sidemenuLang = document.querySelectorAll('.lang--text');
 for (let i = 0; i < sidemenuLang.length; i++) {
@@ -124,9 +201,9 @@ for (let i = 0; i < sidemenuLang.length; i++) {
   });
 }
 
-// sidemenuleft nav
+// sidemenuleft nav(web)
 const sidemenuContents = document.querySelectorAll('.sidemenu__contents'),
-  sidemenuBtn = document.querySelectorAll('.sidemenu--maintext'),
+  sidemenuBtn = document.querySelectorAll('.sidemenu--maintext'), 
   sidemenuBg = document.querySelectorAll('.sidemenu__bg'),
   sidemenuSub = document.querySelectorAll('.sidemenu__sub'),
   sidemenuLine = document.querySelectorAll('.sidemenu__line>span');
@@ -148,6 +225,7 @@ for (let i = 0; i < sidemenuBtn.length; i++) {
     });
     sidemenuSub[i].classList.add('active');
   });
+
   sidemenuContents[i].addEventListener('mouseleave', (e) => {
     e.preventDefault();
     // Background Img
@@ -165,8 +243,7 @@ for (let i = 0; i < sidemenuBtn.length; i++) {
   });
 }
 
-
-// sidemenu animation
+// sidemenu animation(web)
 const sidemenuList = document.querySelectorAll('.sidemenu__list');
 const sidemenuLink = document.querySelectorAll('.sidemenu__link');
 
@@ -328,8 +405,6 @@ for (let i = 0; i < tab__btn.length; i++) {
 }
 
 
-
-
 // *** SI NEWS ***
 var news__bullet = ['장 미쉘 바스키야 특별전', '선인 엽서 공모전', '뉴스레터 102호'];
 var swiperBullet = new Swiper(".mySwiper-news", {
@@ -403,6 +478,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
+
 // *** topbtn Intersection Observer ***
 const topbtn_op = {
   root: null,
@@ -420,9 +496,7 @@ const topbtn_observer = new IntersectionObserver(entries => {
 }, topbtn_op);
 
 const topbtn_ob = document.querySelectorAll('#footer');
-console.log(topbtn_ob);
 topbtn_ob.forEach(el => topbtn_observer.observe(el));
-
 
 
 // *** section Intersection Observer *** 
@@ -453,6 +527,10 @@ titleList.forEach(el => observer.observe(el));
 //     scrollTo(0, 0);
 //   }, 100);
 // }
+
+
+
+
 
 
 

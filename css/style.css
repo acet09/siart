@@ -303,15 +303,6 @@ nav {
   font-size: 22px;
 }
 
-.iconmenu .sidemenu__mobile {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  z-index: 4;
-}
-
 /* searchmenu */
 .search__box {
   position: absolute;
@@ -380,16 +371,14 @@ nav {
 }
 
 
-/* --- sidemenu --- */
+/* --- sidemenu(web) --- */
 .sidemenu__gnb {
   position: absolute;
-  display: flex;
   top: 0;
   left: 100%;
   width: 100%;
   height: 100vh;
   background-color: var(--c-alice);
-  transition: all .5s ease-in-out;
   z-index: 7;
 }
 
@@ -397,6 +386,7 @@ nav {
 .sidemenu__left {
   width: 700px;
   height: 100%;
+  float: left;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
@@ -570,6 +560,7 @@ nav {
 /* sideright */
 .sidemenu__right {
   width: calc(100% - 700px);
+  float: left;
   height: 100%;
   overflow-y: scroll;
   padding: 200px 80px 100px 90px;
@@ -655,6 +646,81 @@ nav {
   font-family: 'GmarketSansMedium';
 }
 
+/* ---sidemenu(mobile)--- */
+.mobile--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  transition: background-color .35s ease-out;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.mobile--bg.active {
+  background-color: #555;
+}
+
+/* left */
+.sidemenu__btn--left {
+  width: 20px;
+  height: 20px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  z-index: 4;
+}
+
+.sidemenu__btn--left img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidemenu__gnb--left {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 96%;
+  height: 100vh;
+  transition: all .35s ease-out;
+  background: var(--c-blue1);
+  z-index: 5;
+}
+
+/* right */
+.sidemenu__btn--right{
+  width: 18px;
+  height: 18px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 4;
+}
+
+.sidemenu__btn--right img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidemenu__gnb--right {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 96%;
+  height: 100vh;
+  transition: all .35s ease-out;
+  background: var(--c-red);
+  z-index: 5;
+}
+
 /* close btn */
 .sidemenu--close {
   position: absolute;
@@ -687,7 +753,7 @@ nav {
 }
 
 .searchbg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -697,7 +763,20 @@ nav {
 }
 
 .searchbg.show {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all .5s .2s ease-in-out;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+/* mobile */
+.searchbg.show-mobile {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -801,6 +880,7 @@ nav {
   font-size: var(--fs-50);
   font-weight: var(--fw-300);
   text-align: center;
+  color: #555;
 }
 
 #banner {
@@ -848,15 +928,6 @@ nav {
   height: 100%;
   background-color: transparent;
 }
-
-
-
-
-
-
-/* 🎈🎈🎈🎈🎈🎈끝 */
-
-
 
 /* pagination */
 #banner .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
@@ -986,10 +1057,11 @@ nav {
 .swiper-story-box .swiper-pagination-bullet span {
   font-size: var(--fs-20);
   font-weight: var(--fw-300);
+  color: var(--c-deepblack);
 }
 
 .swiper-story-box .swiper-pagination-bullet-active span {
-  transition: all .5s ease-in-out;
+  transition: font-size .5s ease;
   font-size: var(--fs-25);
   font-weight: var(--fw-700);
   color: var(--c-blue2);
@@ -1483,6 +1555,7 @@ nav {
 }
 
 .news__text p{
+  color: #555;
   font-size: var(--fs-25);
   font-weight: var(--fw-300);
   line-height: 38px;
@@ -1776,6 +1849,7 @@ nav {
 #info>a>span {
   display: inline-block;
   padding-top: 73px;
+  color: #555;
   font-size: var(--fs-20);
   font-weight: var(--fw-300);
   background-position: center 0;
@@ -1850,6 +1924,7 @@ nav {
 }
 
 .attach__left>div>p{
+  color: #555;
   font-size: 35px;
   font-weight: var(--fw-300);
   margin-bottom: 10px;
@@ -1875,6 +1950,7 @@ nav {
 }
 
 .attach__right>p{
+  color: #555;
   font-size: var(--fs-30);
   line-height: 38px;
 }
@@ -2115,7 +2191,7 @@ nav {
 }
 
 .searchbg.open {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
