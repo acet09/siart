@@ -624,6 +624,10 @@
   }
 
   /* side menu */
+  .sidemenu__mobile {
+    display: block;
+  }
+
   .sidemenu {
     display: none;
   }

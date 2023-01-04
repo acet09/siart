@@ -57,6 +57,23 @@ function navremovecall() {
   headerbg.classList.remove('headerslide');
 }
 
+// nav focus event
+// tab키로 focuse 되면 하단 메뉴가 열린다.
+// navmain 목록들을 quetyselector로 받아와 변수에 저장
+// addEventListerner 설정 해당 항목에 on class 부여
+// css on class에는 
+const navmenuMain = document.querySelectorAll('.navmenu__main');
+console.log(navmenuMain);
+
+
+
+/*
+  열기 버튼 클릭하면 
+  1. display: none or block 
+  2. animation설정된 class add or remove(css속성을 animation으로 옮기기)
+  settimeout 안써보고 하는 방향으로 가보자
+*/ 
+
 
 // searchbt background fadeIn-Out
 const searchbutton = document.querySelector('.search__btn');
@@ -68,22 +85,31 @@ const searchfind = document.querySelector('.search--icon');
 searchbutton.addEventListener("click", (event) => {
   event.preventDefault();
   searchbackground.classList.add('show');
-  searchbox.classList.add('searchbox--show');
-  searchbox.classList.remove('searchbox--hide');
+  searchbox.classList.remove('hide');
+  searchbox.classList.add('show');
 });
 
 searchclose.addEventListener("click", (event) => {
   event.preventDefault();
-  searchbox.classList.add('searchbox--hide');
   searchbackground.classList.remove('show');
-  searchbox.classList.remove('searchbox--show');
+  searchbox.classList.add('hide');
+  // searchbox.classList.remove('show');
+
+  setTimeout(() => {
+    searchbox.classList.remove('show');
+  }, 1000);  
 });
 
 searchbackground.addEventListener('click', (event) => {
   event.preventDefault();
-  searchbox.classList.add('searchbox--hide');
   searchbackground.classList.remove('show');
-  searchbox.classList.remove('searchbox--show');
+  searchbox.classList.add('hide');
+  // searchbox.classList.remove('show');
+  
+  setTimeout(() => {
+    searchbox.classList.remove('show');
+  }, 1000);
+  
 })
 
 searchfind.addEventListener("click", (event) => {
@@ -150,8 +176,6 @@ sidemenu_M_closeRight.addEventListener('click', () => {
 // Side menu events due to window reset
 const bodyWidth = window.innerWidth;
 
-console.log(bodyWidth);
-
 window.addEventListener('resize', () => {
   const bodyRealWidth = window.innerWidth;
   document.body.style.overflow = ('auto');
@@ -162,9 +186,6 @@ window.addEventListener('resize', () => {
     sidemenu_M_bg.classList.remove('active');
   }
 });
-
-// 각 요소에 dom으로 스타일 주면서 transiton 가로변화반응 부분은 제거하여 최대한 빠르게
-// sidemenu를 숨겨주는게 관건이다
 
 
 
@@ -178,13 +199,6 @@ window.addEventListener('resize', () => {
 
 // 1. display:none으로 tab키 이동 막기 
 // 2. tab키 focusevent에 반응하는 javascript
-
-// 3. 윈도우width값이 변하면 닫히는 sidemenu 
-//    querySelectorAll -> nodeList 활용하여 반복문 작성
-//                          VS
-//    파라미터 선언된 각 객체마다 직접적으로 스타일 지정
-
-
 
 
 
@@ -423,6 +437,7 @@ var swiperBullet = new Swiper(".mySwiper-news", {
     el: ".news-scroll",
   },
 });
+
 
 // maps__searchBTN
 const maps__search = document.querySelector('.maps__input--btn');
