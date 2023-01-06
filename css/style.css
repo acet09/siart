@@ -114,8 +114,7 @@ header {
 .headertop__cover>div {
   float: left;
   margin-top: 10px;
-  margin-right: 15px;
-  /* padding: 8px 9px; */
+  margin-right: 10px;
   border-radius: 20px;
 }
 
@@ -129,7 +128,7 @@ header {
 }
 
 .headertop--text {
-  padding: 8px 10px;
+  padding: 10px 13px;
   border-radius: 20px;
 }
 
@@ -480,10 +479,6 @@ nav {
   height: 100%;
 }
 
-.sidemenu__main {
-  margin-bottom: 35px;
-}
-
 .sidemenu__contents {
   position: relative;
   margin-right: 100px;
@@ -492,10 +487,11 @@ nav {
 
 /* main */
 .sidemenu--maintext {
-  display: inline;
+  /* display: inline; */
   color: var(--c-deepgray);
   font-family: 'yg-jalnan';
   font-size: 35px;
+  padding-bottom: 35px;
 }
 
 .sidemenu--maintext:hover {
@@ -506,7 +502,7 @@ nav {
 .sidemenu__line {
   position: absolute;
   content: '';
-  top: 50%;
+  top: 25%;
   right: 28px;
   height: 1px;
   transform: translateY(-50%);
@@ -699,11 +695,15 @@ nav {
   background-color: transparent;
   transition: background-color .35s ease-out;
   pointer-events: none;
-  z-index: 5;
+  z-index:5;                                               
 }
 
 .mobile--bg.active {
   background-color: #555;
+}
+
+.mobile--bg.fade {
+  transition: background-color 0s ease-out;
 }
 
 /* left */
@@ -727,13 +727,68 @@ nav {
 .sidemenu__gnb--left {
   position: fixed;
   top: 0;
-  left: -100%;
-  width: 96%;
+  /* left: -100%; */
+  left: 0%;
+  width: calc(100% - 30px);
   height: 100vh;
-  transition: all .35s ease-out;
   background: var(--c-blue1);
   z-index: 5;
 }
+
+.sidemenu__left--mobile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 88px 30px 50px 30px;
+}
+
+.sidemenu__left--list{
+  position: relative;
+}
+
+.sidemenu__left--list.on .sidemenu__left--sub{
+  display: block;
+}
+
+.sidemenu__left--mobile .title{
+  padding: 7px 0px;
+  color: #777;
+  font-size: var(--fs-25);
+  font-family: 'GangwonEduPowerExtraBoldA';
+}
+
+.sidemenu__left--mobile .title:hover{
+  color: var(--c-alice);
+}
+
+.sidemenu__left--sub{
+  display: none;
+  max-height: 0px;
+  transition: max-height .5s ease-out;
+}
+
+.sidemenu__left--sub > li >a{
+  font-size: 20px;
+  color: #777;
+}
+
+.sidemenu__left--sub > li >a:hover{
+  color: goldenrod;
+}
+
+
+
+.sidemenu--closebtn--left{
+  position: absolute;
+  top: 24px;
+  right: 27px;
+}
+
+.sidemenu--close--left i{
+  font-size: 30px;
+  color: var(--c-deepwhite);
+}
+
 
 /* right */
 .sidemenu__btn--right{
@@ -759,7 +814,6 @@ nav {
   right: -100%;
   width: 96%;
   height: 100vh;
-  transition: all .35s ease-out;
   background: var(--c-red);
   z-index: 5;
 }
@@ -902,6 +956,8 @@ nav {
 }
 
 /* navigation hover option */
+/* d 속성 css는 읽을수 없다는 경고 표시됨 */
+
 .navi-prev:hover path{
   d:path("M 40 10 Q 10 65 40 140");
 }

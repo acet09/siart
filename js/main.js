@@ -63,7 +63,7 @@ function navremovecall() {
 // addEventListerner 설정 해당 항목에 on class 부여
 // css on class에는 
 const navmenuMain = document.querySelectorAll('.navmenu__main');
-console.log(navmenuMain);
+// console.log(navmenuMain);
 
 
 
@@ -126,7 +126,7 @@ const windowscrollLock = document.body;
 
 sidemenuOpen.addEventListener("click", (event) => {
   event.preventDefault();
-  sidemenugnb.style.cssText = 'left: 0%; transition: all 0.5s ease-out 0s; '
+  sidemenugnb.style.cssText = 'left: 0%; transition: all 0.5s ease-out 0s;'
   windowscrollLock.style.overflow = 'hidden'
 });
 
@@ -145,16 +145,62 @@ const sidemenu_M_bg = document.querySelector('.mobile--bg');
 const sidemenu_M_closeLeft = document.querySelector('.sidemenu--closebtn--left');
 
 sidemenu_M_BtnLeft.addEventListener('click', () => {
-  sidemenu_M_GnbLeft.style.left = ('0%');
+  sidemenu_M_GnbLeft.style.cssText = 'left: 0%; transition: all .35s ease-out 0s;'
   document.body.style.overflow = 'hidden';
+  sidemenu_M_bg.classList.remove('fade');
   sidemenu_M_bg.classList.add('active');
 });
 
 sidemenu_M_closeLeft.addEventListener('click', () => {
-  sidemenu_M_GnbLeft.style.left = ('-100%');
+  sidemenu_M_GnbLeft.style.cssText = 'left: -100%; transition: all .35s ease-out 0s;'
   document.body.style.overflow = 'auto';
+  sidemenu_M_bg.classList.remove('fade');
   sidemenu_M_bg.classList.remove('active');
 });
+
+// sidemenu left gnb nav acodian menu
+const sidemenu_M_gnbList = document.querySelectorAll('.sidemenu__left--list');
+const sidemenu_M_gnbsub = document.querySelectorAll('.sidemenu__left--sub');
+
+for(let i = 0; i < sidemenu_M_gnbList.length; i++) {
+  sidemenu_M_gnbList[i].addEventListener('click', () => {
+    // 토글 해결중
+    
+    // console.log(sidemenu_M_gnbList[i]);
+
+    // sidemenu_M_gnbList.forEach((items) => {
+    //   items.classList.remove('on');
+    // });
+    // sidemenu_M_gnbsub.forEach((items) => {
+    //   items.style.display = ('none');
+    // });
+
+    // sidemenu_M_gnbList[i].classList.remove('on');
+    // sidemenu_M_gnbsub[i].style.display = ('block');    
+    
+    if(sidemenu_M_gnbList[i].className == 'sidemenu__left--list') {
+      sidemenu_M_gnbList[i].className = 'sidemenu__left--list on'
+      sidemenu_M_gnbsub[i].style.display = ('block');
+      sidemenu_M_gnbsub[i].style.maxHeight = sidemenu_M_gnbsub[i].scrollHeight + 'px';
+    } else {
+      sidemenu_M_gnbList[i].className = 'sidemenu__left--list'
+      sidemenu_M_gnbsub[i].style.maxHeight = null;
+      setTimeout(function(){
+        sidemenu_M_gnbsub[i].style.display = ('none');
+      },500);
+          
+    }
+
+
+  });
+}
+
+
+
+
+
+
+
 
 // sidemenu right
 const sidemenu_M_BtnRight = document.querySelector('.sidemenu__btn--right');
@@ -162,14 +208,16 @@ const sidemenu_M_GnbRight = document.querySelector('.sidemenu__gnb--right');
 const sidemenu_M_closeRight = document.querySelector('.sidemenu--closebtn--right');
 
 sidemenu_M_BtnRight.addEventListener('click', () => {
-  sidemenu_M_GnbRight.style.right = ('0%');
-  document.body.style.overflow = 'hidden';
+  sidemenu_M_GnbRight.style.cssText = 'right: 0%; transition: all .35s ease-out 0s;'
+  document.body.style.overflow = 'hidden';  
+  sidemenu_M_bg.classList.remove('fade');
   sidemenu_M_bg.classList.add('active');
 });
 
 sidemenu_M_closeRight.addEventListener('click', () => {
-  sidemenu_M_GnbRight.style.right = ('-100%');
+  sidemenu_M_GnbRight.style.cssText = 'right: -100%; transition: all .35s ease-out 0s;'
   document.body.style.overflow = 'auto';
+  sidemenu_M_bg.classList.remove('fade');
   sidemenu_M_bg.classList.remove('active');
 });
 
@@ -184,6 +232,7 @@ window.addEventListener('resize', () => {
     sidemenu_M_GnbLeft.style.cssText = 'left: -100%'
     sidemenu_M_GnbRight.style.cssText = 'right: -100%'
     sidemenu_M_bg.classList.remove('active');
+    sidemenu_M_bg.classList.add('fade');
   }
 });
 
