@@ -161,23 +161,9 @@ sidemenu_M_closeLeft.addEventListener('click', () => {
 // sidemenu left gnb nav acodian menu
 const sidemenu_M_gnbList = document.querySelectorAll('.sidemenu__left--list');
 const sidemenu_M_gnbsub = document.querySelectorAll('.sidemenu__left--sub');
-
 for(let i = 0; i < sidemenu_M_gnbList.length; i++) {
   sidemenu_M_gnbList[i].addEventListener('click', () => {
-    // 토글 해결중
-    
-    // console.log(sidemenu_M_gnbList[i]);
-
-    // sidemenu_M_gnbList.forEach((items) => {
-    //   items.classList.remove('on');
-    // });
-    // sidemenu_M_gnbsub.forEach((items) => {
-    //   items.style.display = ('none');
-    // });
-
-    // sidemenu_M_gnbList[i].classList.remove('on');
-    // sidemenu_M_gnbsub[i].style.display = ('block');    
-    
+    // 토글 해결중        
     if(sidemenu_M_gnbList[i].className == 'sidemenu__left--list') {
       sidemenu_M_gnbList[i].className = 'sidemenu__left--list on'
       sidemenu_M_gnbsub[i].style.display = ('block');
@@ -187,18 +173,27 @@ for(let i = 0; i < sidemenu_M_gnbList.length; i++) {
       sidemenu_M_gnbsub[i].style.maxHeight = null;
       setTimeout(function(){
         sidemenu_M_gnbsub[i].style.display = ('none');
-      },500);
-          
+      },390);
     }
+
+    // sidemenu_M_gnbList.forEach((items) => {
+    //   items.classList.remove('on');
+    // });
+    // sidemenu_M_gnbsub.forEach((items) => {
+    //   setTimeout(function () {
+    //     items.style.display = ('none');
+    //   },500);
+    // });
+
+    // sidemenu_M_gnbList[i].classList.remove('on');
+    // sidemenu_M_gnbsub[i].style.display = ('block');    
+    
+
 
 
   });
 }
-
-
-
-
-
+// 높이 자동 계산값 제외하고 모두 class on css에 넣어야됨
 
 
 

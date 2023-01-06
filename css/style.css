@@ -727,7 +727,7 @@ nav {
 .sidemenu__gnb--left {
   position: fixed;
   top: 0;
-  /* left: -100%; */
+  /* left: -100%;  원상복귀*/
   left: 0%;
   width: calc(100% - 30px);
   height: 100vh;
@@ -739,15 +739,12 @@ nav {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 88px 30px 50px 30px;
+  padding: 95px 30px 50px 30px;
+  overflow: scroll;
 }
 
 .sidemenu__left--list{
-  position: relative;
-}
-
-.sidemenu__left--list.on .sidemenu__left--sub{
-  display: block;
+  margin-bottom: 10px;
 }
 
 .sidemenu__left--mobile .title{
@@ -764,7 +761,9 @@ nav {
 .sidemenu__left--sub{
   display: none;
   max-height: 0px;
-  transition: max-height .5s ease-out;
+  overflow: hidden;
+  padding: 0px 0px 0px 20px;
+  transition: all .38s ease-out;
 }
 
 .sidemenu__left--sub > li >a{
@@ -775,8 +774,6 @@ nav {
 .sidemenu__left--sub > li >a:hover{
   color: goldenrod;
 }
-
-
 
 .sidemenu--closebtn--left{
   position: absolute;
@@ -789,6 +786,10 @@ nav {
   color: var(--c-deepwhite);
 }
 
+/* 'on' active */
+.sidemenu__left--list.on .sidemenu__left--sub{
+  padding: 0px 0px 30px 20px;
+}
 
 /* right */
 .sidemenu__btn--right{
@@ -959,11 +960,11 @@ nav {
 /* d 속성 css는 읽을수 없다는 경고 표시됨 */
 
 .navi-prev:hover path{
-  d:path("M 40 10 Q 10 65 40 140");
+  d: path("M 40 10 Q 10 65 40 140");
 }
 
 .navi-next:hover path{
-  d:path("M 10 10 Q 40 65 10 140");
+  d: path("M 10 10 Q 40 65 10 140");
 }
 
 .navi-prev:hover .prev-text{
