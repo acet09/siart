@@ -750,7 +750,7 @@ nav {
 .sidemenu__left--mobile .title{
   padding: 7px 0px;
   color: #777;
-  font-size: var(--fs-25);
+  font-size: var(--fs-20);
   font-family: 'GangwonEduPowerExtraBoldA';
 }
 
@@ -759,15 +759,33 @@ nav {
 }
 
 .sidemenu__left--sub{
+  position: relative;
   display: none;
   max-height: 0px;
   overflow: hidden;
   padding: 0px 0px 0px 20px;
   transition: all .38s ease-out;
+  z-index: 2;
+}
+
+.sidemenu__left--bg{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sidemenu__left--bg img{
+  width: 100%;
+  height: 100%;
 }
 
 .sidemenu__left--sub > li >a{
-  font-size: 20px;
+  padding: 10px 0px;
+  font-size: var(--fs-18);
   color: #777;
 }
 
@@ -790,6 +808,10 @@ nav {
 .sidemenu__left--list.on .sidemenu__left--sub{
   padding: 0px 0px 30px 20px;
 }
+
+.sidemenu__left--list.on .sidemenu__left--bg{
+}
+
 
 /* right */
 .sidemenu__btn--right{
