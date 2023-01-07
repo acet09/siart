@@ -31,8 +31,9 @@
   --c-blue2: #0099d0;
   --c-red: #f55;
   --c-alice: #f0f8ff;
-  --c-white: #fafafa;
+  --c-white: #fff;
   --c-deepwhite: #fefefe;
+  --c-darkwhite: #dadada;
   --c-black: #666;
   --c-deepblack: #333;
   --c-gray: #eee;
@@ -693,9 +694,9 @@ nav {
   width: 100%;
   height: 100vh;
   background-color: transparent;
-  transition: background-color .35s ease-out;
+  transition: background-color .5s ease-out;
   pointer-events: none;
-  z-index:5;                                               
+  z-index:5;           
 }
 
 .mobile--bg.active {
@@ -727,11 +728,11 @@ nav {
 .sidemenu__gnb--left {
   position: fixed;
   top: 0;
-  /* left: -100%;  원상복귀*/
-  left: 0%;
+  left: -100%; 
   width: calc(100% - 30px);
   height: 100vh;
   background: var(--c-blue1);
+  overflow: hidden;
   z-index: 5;
 }
 
@@ -740,22 +741,67 @@ nav {
   width: 100%;
   height: 100%;
   padding: 95px 30px 50px 30px;
-  overflow: scroll;
 }
 
+/* mobile left nav */
 .sidemenu__left--list{
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
 
-.sidemenu__left--mobile .title{
+/* mobile left background */
+.sidemenu__left--bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: all .38s ease-out;
+  transform: scale(1.035);
+  pointer-events: none;
+}
+
+.sidemenu__left--bg.active{
+  opacity: 1;
+}
+
+.sidemenu__left--bg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%); 
+}
+
+/* mobile left text */
+.sidemenu__left--inner {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.sidemenu__left--subtitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtitle--main {
   padding: 7px 0px;
-  color: #777;
+  color: var(--c-darkwhite);
   font-size: var(--fs-20);
   font-family: 'GangwonEduPowerExtraBoldA';
 }
 
-.sidemenu__left--mobile .title:hover{
-  color: var(--c-alice);
+.sidemenu__left--subtitle:hover .subtitle--main{
+  color: var(--c-blue1);
+}
+
+.subtitle--mark {
+  color: var(--c-darkwhite);
+}
+
+.sidemenu__left--subtitle:hover .subtitle--mark{
+  color: var(--c-blue1);
 }
 
 .sidemenu__left--sub{
@@ -768,29 +814,15 @@ nav {
   z-index: 2;
 }
 
-.sidemenu__left--bg{
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.sidemenu__left--bg img{
-  width: 100%;
-  height: 100%;
-}
-
 .sidemenu__left--sub > li >a{
-  padding: 10px 0px;
+  padding: 11px 0px;
   font-size: var(--fs-18);
-  color: #777;
+  font-weight: var(--fw-500);
+  color: var(--c-deepwhite);
 }
 
 .sidemenu__left--sub > li >a:hover{
-  color: goldenrod;
+  color: var(--c-blue1);
 }
 
 .sidemenu--closebtn--left{
@@ -804,12 +836,19 @@ nav {
   color: var(--c-deepwhite);
 }
 
+.sidemenu--close--left i:hover{
+  color: var(--c-blue1);
+}
+
+
 /* 'on' active */
 .sidemenu__left--list.on .sidemenu__left--sub{
-  padding: 0px 0px 30px 20px;
+  padding: 0px 0px 23px 20px;
 }
 
 .sidemenu__left--list.on .sidemenu__left--bg{
+  opacity: 1;
+  transform: scale(1.0);
 }
 
 

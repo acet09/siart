@@ -72,7 +72,7 @@ const navmenuMain = document.querySelectorAll('.navmenu__main');
   1. display: none or block 
   2. animation설정된 class add or remove(css속성을 animation으로 옮기기)
   settimeout 안써보고 하는 방향으로 가보자
-*/ 
+*/
 
 
 // searchbt background fadeIn-Out
@@ -97,7 +97,7 @@ searchclose.addEventListener("click", (event) => {
 
   setTimeout(() => {
     searchbox.classList.remove('show');
-  }, 1000);  
+  }, 1000);
 });
 
 searchbackground.addEventListener('click', (event) => {
@@ -105,11 +105,11 @@ searchbackground.addEventListener('click', (event) => {
   searchbackground.classList.remove('show');
   searchbox.classList.add('hide');
   // searchbox.classList.remove('show');
-  
+
   setTimeout(() => {
     searchbox.classList.remove('show');
   }, 1000);
-  
+
 })
 
 searchfind.addEventListener("click", (event) => {
@@ -156,44 +156,57 @@ sidemenu_M_closeLeft.addEventListener('click', () => {
   document.body.style.overflow = 'auto';
   sidemenu_M_bg.classList.remove('fade');
   sidemenu_M_bg.classList.remove('active');
+  
+  sidemenu_M_gnbList.forEach((items) => {
+    items.classList.remove('on');  
+  });
+
+  sidemenu_M_gnbsub.forEach((items) => {
+    setTimeout(function (){
+      items.style.maxHeight = ('0px');
+    }, 400);    
+  });
+
 });
 
 // sidemenu left gnb nav acodian menu
 const sidemenu_M_gnbList = document.querySelectorAll('.sidemenu__left--list');
 const sidemenu_M_gnbsub = document.querySelectorAll('.sidemenu__left--sub');
-for(let i = 0; i < sidemenu_M_gnbList.length; i++) {
+
+for (let i = 0; i < sidemenu_M_gnbList.length; i++) {
   sidemenu_M_gnbList[i].addEventListener('click', () => {
-    // 토글 해결중        
-    if(sidemenu_M_gnbList[i].className == 'sidemenu__left--list') {
-      sidemenu_M_gnbList[i].className = 'sidemenu__left--list on'
+    if (sidemenu_M_gnbList[i].className == 'sidemenu__left--list') {
+      // Main-title menu forEach
+      sidemenu_M_gnbList.forEach((items) => {
+        items.classList.remove('on');
+      });
+      // Sub-ul menu forEach
+      sidemenu_M_gnbsub.forEach((items) => {
+        items.style.maxHeight = ('0px');
+        setTimeout(function(){
+          items.style.display = ('none');
+          sidemenu_M_gnbsub[i].style.display = ('block');
+        }, 390);        
+      });
+      sidemenu_M_gnbList[i].classList.add('on');
       sidemenu_M_gnbsub[i].style.display = ('block');
       sidemenu_M_gnbsub[i].style.maxHeight = sidemenu_M_gnbsub[i].scrollHeight + 'px';
     } else {
-      sidemenu_M_gnbList[i].className = 'sidemenu__left--list'
-      sidemenu_M_gnbsub[i].style.maxHeight = null;
-      setTimeout(function(){
-        sidemenu_M_gnbsub[i].style.display = ('none');
-      },390);
+      // Main-title menu forEach
+      sidemenu_M_gnbList.forEach((items) => {
+        items.classList.remove('on');
+      });
+      // Sub-ul menu forEach
+      sidemenu_M_gnbsub.forEach((items) => {
+        items.style.maxHeight = ('0px');
+        setTimeout(function (){
+          items.style.display = ('none');
+        }, 390);        
+      });
     }
-
-    // sidemenu_M_gnbList.forEach((items) => {
-    //   items.classList.remove('on');
-    // });
-    // sidemenu_M_gnbsub.forEach((items) => {
-    //   setTimeout(function () {
-    //     items.style.display = ('none');
-    //   },500);
-    // });
-
-    // sidemenu_M_gnbList[i].classList.remove('on');
-    // sidemenu_M_gnbsub[i].style.display = ('block');    
-    
-
-
-
   });
 }
-// 높이 자동 계산값 제외하고 모두 class on css에 넣어야됨
+
 
 
 
@@ -204,7 +217,7 @@ const sidemenu_M_closeRight = document.querySelector('.sidemenu--closebtn--right
 
 sidemenu_M_BtnRight.addEventListener('click', () => {
   sidemenu_M_GnbRight.style.cssText = 'right: 0%; transition: all .35s ease-out 0s;'
-  document.body.style.overflow = 'hidden';  
+  document.body.style.overflow = 'hidden';
   sidemenu_M_bg.classList.remove('fade');
   sidemenu_M_bg.classList.add('active');
 });
@@ -231,21 +244,6 @@ window.addEventListener('resize', () => {
   }
 });
 
-
-
-// queryselectorAll로 받은 node.List.forEach 반복문 작성
-// 
-// 🎈🎈🎈🎈🎈 🎈🎈🎈🎈🎈 🎈🎈🎈🎈🎈 🎈🎈🎈🎈🎈 🎈🎈🎈🎈🎈
-// 각각의 sidemenu들은 숨겨진 상태에서 display: none 상태로 만들어
-// 사용자들의 불필요한 tab이동을 막아야됨(display:none으로 숨김상태 오프젝트 다 막아야됨)
-// display + transition 조합(x) , display + animation 조합을 활용해보자
-
-
-// 1. display:none으로 tab키 이동 막기 
-// 2. tab키 focusevent에 반응하는 javascript
-
-
-
 // sidemenu left(web)
 // language text
 const sidemenuLang = document.querySelectorAll('.lang--text');
@@ -261,7 +259,7 @@ for (let i = 0; i < sidemenuLang.length; i++) {
 
 // sidemenuleft nav(web)
 const sidemenuContents = document.querySelectorAll('.sidemenu__contents'),
-  sidemenuBtn = document.querySelectorAll('.sidemenu--maintext'), 
+  sidemenuBtn = document.querySelectorAll('.sidemenu--maintext'),
   sidemenuBg = document.querySelectorAll('.sidemenu__bg'),
   sidemenuSub = document.querySelectorAll('.sidemenu__sub'),
   sidemenuLine = document.querySelectorAll('.sidemenu__line>span');
