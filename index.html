@@ -197,7 +197,7 @@
           </a>
           <div class="search__box">
             <div class="search--cover">
-              <input class="search--input" type="text" placeholder="궁금하신 제품이나 정보를 빠르게 찾아보세요">
+              <input class="search--input" type="text" placeholder="궁금하신 제품이나 정보를 빠르게 찾아보세요" maxlength="50" autocomplete="off">
               <a href="javascript:;" class="search--icon">
                 <img src="images/header/iconmenu/gnb-search-btn-27x28.png" alt="검색하기">
               </a>
@@ -209,7 +209,6 @@
             </div>
           </div>
         </div>
-
         <!-- side menu(mobile) -->
         <div class="sidemenu__mobile">
           <span class="mobile--bg"></span>
@@ -304,15 +303,17 @@
             </a>
             <!-- side -->
             <div class="sidemenu__gnb--right">
+              <!-- right 껍데기 -->
               <div class="sidemenu__right--mobile">
+                <!-- 타이틀 -->
                 <div class="sidemenu__title--right">
                   <div class="sidemenu__member">
-                    <a href="javascript:;"></a>
+                    <a href="javascript:;">로그인</a>
                     <span></span>
-                    <a href="javascript:;"></a>
+                    <a href="javascript:;">회원가입</a>
                   </div>
                   <div class="sidemenu__subbtn">
-                    <a href="javascript:;"></a>
+                    <a href="javascript:;" class="login">선인 아트몰</a>
                     <a href="javascript:;" class="sidemenu--closebtn--right">
                       <i class="fa-solid fa-xmark">
                         <span class="ir-text">모바일 전체메뉴 닫기</span>
@@ -320,95 +321,121 @@
                     </a>
                   </div>
                 </div>
+                <!-- 찾기메뉴 -->
                 <div class="sidemenu__search--right">
-                  <input type="text">
+                  <input class="sidemenu__search--input" type="text" placeholder="궁금하신 제품이나 정보를 빠르게 찾아보세요" maxlength="50" autocomplete="off">
+                  <a href="javascript:;" class="sidemenu__search--icon">
+                    <img src="images/header/iconmenu/gnb-search-btn-27x28.png" alt="검색하기">
+                  </a>
                 </div>
+                <!-- gnb 아코디언-->
                 <div class="sidemenu__nav--right">
                   <div class="sidemeun__list--right">
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
-                      <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                      <div class="sidemenu__items--title">
+                        <a href="javascript:;">종이</a>
+                        <i class="fa-solid fa-plus subtitle--mark"></i>
+                      </div>
+                        <ul class="sidemenu__group">
+                        <li><a href="javascript:;">A4</a></li>
+                        <li><a href="javascript:;">B4</a></li>
+                        <li><a href="javascript:;">대형</a></li>
+                        <li><a href="javascript:;">아크릴전용</a></li>
                       </ul>
                     </div>
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
-                      <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                      <div class="sidemenu__items--title">
+                        <a href="javascript:;">붓</a>
+                        <i class="fa-solid fa-plus subtitle--mark"></i>
+                      </div>
+                        <ul class="sidemenu__group">
+                        <li><a href="javascript:;">모피</a></li>
+                        <li><a href="javascript:;">공업용</a></li>
+                        <li><a href="javascript:;">폴리에스테르</a></li>
                       </ul>
                     </div>
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
-                      <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                      <div class="sidemenu__items--title">
+                        <a href="javascript:;">팔레트</a>
+                        <i class="fa-solid fa-plus subtitle--mark"></i>
+                      </div>
+                        <ul class="sidemenu__group">
+                        <li><a href="javascript:;">목재</a></li>
+                        <li><a href="javascript:;">플라스틱</a></li>
+                        <li><a href="javascript:;">우레탄</a></li>
                       </ul>
                     </div>
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
-                      <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                      <div class="sidemenu__items--title">
+                        <a href="javascript:;">장소대여</a>
+                        <i class="fa-solid fa-plus subtitle--mark"></i>
+                      </div>
+                        <ul class="sidemenu__group">
+                        <li><a href="javascript:;">대여정보</a></li>
+                        <li><a href="javascript:;">위치검색</a></li>
                       </ul>
                     </div>
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
-                      <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                      <div class="sidemenu__items--title">
+                        <a href="javascript:;">판화</a>
+                        <i class="fa-solid fa-plus subtitle--mark"></i>
+                      </div>
+                        <ul class="sidemenu__group">
+                        <li><a href="javascript:;">금속판화</a></li>
+                        <li><a href="javascript:;">목재판화</a></li>
+                        <li><a href="javascript:;">청동판화</a></li>
                       </ul>
                     </div>
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
-                      <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                      <div class="sidemenu__items--title">  
+                        <a href="javascript:;">석고상</a>
+                        <i class="fa-solid fa-plus subtitle--mark"></i>
+                      </div>
+                        <ul class="sidemenu__group">
+                        <li><a href="javascript:;">도형</a></li>
+                        <li><a href="javascript:;">사물</a></li>
+                        <li><a href="javascript:;">인체</a></li>
+                        <li><a href="javascript:;">흉상</a></li>
                       </ul>
                     </div>
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
+                    <div class="sidemenu__items--title">  
+                      <a href="javascript:;">조각</a>
+                      <i class="fa-solid fa-plus subtitle--mark"></i>
+                    </div>
                       <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;">대리석</a></li>
+                        <li><a href="javascript:;">청동</a></li>
+                        <li><a href="javascript:;">목재</a></li>
+                        <li><a href="javascript:;">점토</a></li>
                       </ul>
                     </div>
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
-                      <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                      <div class="sidemenu__items--title">
+                        <a href="javascript:;">현대미술</a>
+                        <i class="fa-solid fa-plus subtitle--mark"></i>
+                      </div>
+                      <ul class="sidemenu__group">                    
+                        <li><a href="javascript:;">비디오</a></li>
+                        <li><a href="javascript:;">디지털</a></li>
+                        <li><a href="javascript:;">팝</a></li>
                       </ul>
                     </div>
                     <div class="sidemenu__items--right">
-                      <a href="javascript:;"></a>
+                      <div class="sidemenu__items--title">
+                        <a href="javascript:;">Graphic</a>
+                        <i class="fa-solid fa-plus subtitle--mark"></i>
+                      </div>
                       <ul class="sidemenu__group">
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
-                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;">Photoshop</a></li>
+                        <li><a href="javascript:;">Illustrater</a></li>
+                        <li><a href="javascript:;">3dmax</a></li>
                       </ul>
                     </div>
                   </div>
                   <div class="sidemenu__link--right"></div>
                 </div>
+                <!-- 외부 링크 select -->
                 <div class="sidemenu__select--right">
                   <div class="sidemenu__languege--right"></div>
                   <select name="" id=""></select>
@@ -417,7 +444,6 @@
             </div>
           </div>
         </div>
-
         <!-- side menu(web) -->
         <div class="sidemenu__web">
           <a href="javascript:;" class="sidemenu__btn">
@@ -544,15 +570,16 @@
                     <ul class="sidemenu__items">
                       <li class="sidemenu__item"><a href="javascript:;">금속판화</a></li>
                       <li class="sidemenu__item"><a href="javascript:;">목재판화</a></li>
-                      <li class="sidemenu__item"><a href="javascript:;">청동판솨</a></li>
+                      <li class="sidemenu__item"><a href="javascript:;">청동판화</a></li>
                     </ul>
                   </li>
                   <li class="sidemenu__list">
-                    <a href="javascript:;" class="sidemenu__title">판화</a>
+                    <a href="javascript:;" class="sidemenu__title">석고상</a>
                     <ul class="sidemenu__items">
-                      <li class="sidemenu__item"><a href="javascript:;">금속판화</a></li>
-                      <li class="sidemenu__item"><a href="javascript:;">목재판화</a></li>
-                      <li class="sidemenu__item"><a href="javascript:;">청동판솨</a></li>
+                      <li class="sidemenu__item"><a href="javascript:;">도형</a></li>
+                      <li class="sidemenu__item"><a href="javascript:;">사물</a></li>
+                      <li class="sidemenu__item"><a href="javascript:;">인체</a></li>
+                      <li class="sidemenu__item"><a href="javascript:;">흉상</a></li>
                     </ul>
                   </li>
                   <li class="sidemenu__list">
@@ -603,7 +630,6 @@
             </div>
           </div>
         </div>
-
       </div>
       <div class="headerbg"></div>
     </header>
@@ -1106,32 +1132,34 @@
             <a href="javascript:;" class="side--open"></a>
           </div>
           <div class="topbtn__sidemenu">
-            <div class="topbtn__sidemenu--top">
-              <p>신한화구의 다양한<br>
-                제품을 카탈로그를 통해<br>
-                만나보세요.</p>
-              <a href="javascript:;">카탈로그 다운로드</a>
+            <div class="topbtn__inner">
+              <div class="topbtn__sidemenu--top">
+                <p>신한화구의 다양한<br>
+                  제품을 카탈로그를 통해<br>
+                  만나보세요.</p>
+                <a href="javascript:;">카탈로그 다운로드</a>
+              </div>
+              <div class="topbtn__sidemenu--bottom">
+                <a href="javascript:;" class="sideicon__item">
+                  <span>
+                    나에게 맞는<br>장비 찾기
+                  </span>
+                </a>
+                <a href="javascript:;" class="sideicon__store">
+                  <span>
+                    매장 안내
+                  </span>
+                </a>
+                <a href="javascript:;" class="sideicon__mall">
+                  <span>
+                    SI몰 바로가기
+                  </span>
+                </a>
+              </div>
+              <a href="javascript:;" class="side--close">
+                <img src="./images/etc/topbtn-close-24x24.png" alt="close">
+              </a>
             </div>
-            <div class="topbtn__sidemenu--bottom">
-              <a href="javascript:;" class="sideicon__item">
-                <span>
-                  나에게 맞는<br>장비 찾기
-                </span>
-              </a>
-              <a href="javascript:;" class="sideicon__store">
-                <span>
-                  매장 안내
-                </span>
-              </a>
-              <a href="javascript:;" class="sideicon__mall">
-                <span>
-                  SI몰 바로가기
-                </span>
-              </a>
-            </div>
-            <a href="javascript:;" class="side--close">
-              <img src="./images/etc/topbtn-close-24x24.png" alt="close">
-            </a>
           </div>
         </div>
       </div>
