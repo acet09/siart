@@ -354,10 +354,6 @@ sidemenu_M_search.addEventListener('click', ()=> {
   alert('검색어를 입력해주세요.');
 });
 
-
-
-
-
 // sidemenu 'right' nav acodian menu(mobile)
 const sidemenu_M_navItems = document.querySelectorAll('.sidemenu__items--right');
 const sidemenu_M_navGroup = document.querySelectorAll('.sidemenu__group');
@@ -396,7 +392,7 @@ for (let i = 0; i < sidemenu_M_navItems.length; i++) {
   });
 }
 
-
+// sidemenu 'right' language title active
 
 
 
@@ -632,6 +628,7 @@ titleList.forEach(el => observer.observe(el));
 
 // 반드시 지울것 새로고침 시 상단 이동 코드임🎈
 // *** browser refresh ***
+
 // window.onload = function () {
 //   body.classList.remove('scroll-down');
 //   setTimeout(function () {

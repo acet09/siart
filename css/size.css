@@ -474,7 +474,7 @@
   .sidemenu__left {
     width: 100%;
     height: 550px;
-    padding: 80px calc(100% - 490px) 60px 55px;
+    padding: 70px calc(100% - 490px) 60px 50px;
   }
 
   .sidemenu__right {
