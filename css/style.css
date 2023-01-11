@@ -858,6 +858,8 @@ nav {
   right: -100%;
   width: calc(100% - 30px);
   height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
   background-color: var(--c-alice);
   z-index: 5;
   transition: all .35s ease-out;
