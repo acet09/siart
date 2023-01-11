@@ -383,7 +383,7 @@
     bottom: 55px;
     left: 0;
     right: auto;
-    background: url(../images/section/news/next_arrow.png) no-repeat center / cover;
+    background: url('../images/section/news/line-arrow.svg') no-repeat center / cover;
     outline: none;
   }
   
@@ -690,6 +690,16 @@
     margin: 8px;
     background-color: #5e5e5e;
     outline: none;
+  }
+
+  .slide-01 {
+    background-image: url('../images/section/banner/bobimg_768.png');
+  }
+  .slide-02 {
+    background-image: url('../images/section/banner/museum_768.png');
+  }
+  .slide-03 {
+    background-image: url('../images/section/banner/oreian_768.png');
   }
 
   /* story */
