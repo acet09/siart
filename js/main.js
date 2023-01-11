@@ -346,6 +346,15 @@ sidemenu_M_closeRight.addEventListener('click', () => {
   document.body.style.overflow = 'auto';
   sidemenu_M_bg.classList.remove('fade');
   sidemenu_M_bg.classList.remove('active');
+  sidemenu_M_navItems.forEach((items) => {
+    items.classList.remove('on');
+  });
+  sidemenu_M_navGroup.forEach((items) => {
+    items.style.maxHeight = ('0px');
+    setTimeout(function (){
+      items.style.display = ('none');
+    },390);        
+  });  
 });
 
 // sidemenu search message 
@@ -393,7 +402,15 @@ for (let i = 0; i < sidemenu_M_navItems.length; i++) {
 }
 
 // sidemenu 'right' language title active
-
+const sidemenu_M_language = document.querySelectorAll('.lang--text--right');
+for(let i = 0; i < sidemenu_M_language.length; i++) {
+  sidemenu_M_language[i].addEventListener('click', () => {
+    sidemenu_M_language.forEach((items) =>{
+      items.classList.remove('active');
+    });
+    sidemenu_M_language[i].classList.add('active');
+  });
+}
 
 
 // Side menu events due to window reset
@@ -616,17 +633,21 @@ const options = {
   threshold: .4,
 }
 const observer = new IntersectionObserver(entries => {
+
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
     }
   });
 }, options);
+
 const titleList = document.querySelectorAll('.observer');
 titleList.forEach(el => observer.observe(el));
 
 
-// 반드시 지울것 새로고침 시 상단 이동 코드임🎈
+
+
+// 반드시 지울것 = 새로고침 시 상단 이동 코드임🎈
 // *** browser refresh ***
 
 // window.onload = function () {
