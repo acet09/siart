@@ -4,7 +4,7 @@
 /*** width 1920 ***/
 @media screen and (min-width: 1921px) {
   .sidemenu__right {
-    padding: 200px 240px 40px 90px;
+    padding: 173px 240px 40px 90px;
   }
 }
 
@@ -59,7 +59,7 @@
 
   .sidemenu__right {
     width: calc(100% - 630px);
-    padding: 200px 80px 100px 85px;
+    padding: 173px 80px 40px 85px;
   }
 
   .sidemenu__listbox {
@@ -191,7 +191,7 @@
 
   .sidemenu__right {
     width: calc(100% - 570px);
-    padding: 200px 90px 100px 85px;
+    padding: 173px 90px 40px 85px;
   }
 
   .sidemenu__listbox {
@@ -205,6 +205,10 @@
   .sidemenu__link {
     width: 100%;
     margin-bottom: 20px;
+  }
+
+  .sidemenu--close {
+    right: 55px;
   }
 
   /* story */
@@ -480,7 +484,7 @@
   .sidemenu__right {
     width: 100%;
     height: auto;
-    padding: 80px 55px 100px 55px;
+    padding: 80px 55px 40px 55px;
     overflow: unset;
   }
 
@@ -574,7 +578,7 @@
 /*** width 800 ***/
 @media screen and (max-width: 800px) {
   .sidemenu__right {
-    padding: 80px 23px 100px 55px;
+    padding: 80px 23px 40px 55px;
   }
 }
 

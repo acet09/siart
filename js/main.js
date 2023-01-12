@@ -645,8 +645,6 @@ const titleList = document.querySelectorAll('.observer');
 titleList.forEach(el => observer.observe(el));
 
 
-
-
 // 반드시 지울것 = 새로고침 시 상단 이동 코드임🎈
 // *** browser refresh ***
 

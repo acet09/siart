@@ -445,7 +445,7 @@ nav {
 
 .sidemenu__language {
   width: 100%;
-  margin-bottom: 85px;
+  margin-bottom: 78px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -596,7 +596,7 @@ nav {
   float: left;
   height: 100%;
   overflow-y: scroll;
-  padding: 200px 80px 100px 90px;
+  padding: 175px 80px 50px 90px;
 }
 
 .sidemenu__listbox {
