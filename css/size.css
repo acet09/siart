@@ -4,7 +4,7 @@
 /*** width 1920 ***/
 @media screen and (min-width: 1921px) {
   .sidemenu__right {
-    padding: 173px 240px 40px 90px;
+    padding: 173px 240px 80px 90px;
   }
 }
 
@@ -59,7 +59,7 @@
 
   .sidemenu__right {
     width: calc(100% - 630px);
-    padding: 173px 80px 40px 85px;
+    padding: 173px 80px 80px 85px;
   }
 
   .sidemenu__listbox {
@@ -191,7 +191,7 @@
 
   .sidemenu__right {
     width: calc(100% - 570px);
-    padding: 173px 90px 40px 85px;
+    padding: 173px 90px 80px 85px;
   }
 
   .sidemenu__listbox {
@@ -347,6 +347,11 @@
     display: none;
   }
 
+  /* collection */
+  #collection .more--btn {
+    display: none;
+  }
+
   /* news */
   .swiper-news-box {
     width: 700px;
@@ -484,7 +489,7 @@
   .sidemenu__right {
     width: 100%;
     height: auto;
-    padding: 80px 55px 40px 55px;
+    padding: 80px 55px 80px 55px;
     overflow: unset;
   }
 
@@ -578,7 +583,7 @@
 /*** width 800 ***/
 @media screen and (max-width: 800px) {
   .sidemenu__right {
-    padding: 80px 23px 40px 55px;
+    padding: 80px 23px 80px 55px;
   }
 }
 
@@ -720,7 +725,7 @@
 
   /* story */
   #story {
-    margin: 85px 0 90px;
+    margin: 85px 0 0px;
   }
   
   #story.observer .se--title {
@@ -730,7 +735,7 @@
 
   .swiper-story-box {
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 70px);
     margin-top: 30px;
   }
 
@@ -741,9 +746,13 @@
 
   #story .text--box {
     width: 83%;
-    top: 60%;
+    top: 70%;
     left: auto;
     right: auto;
+  }
+
+  #story .swiper-slide:after {
+    height: 63%;
   }
 
   #story .text--box span {
@@ -763,6 +772,10 @@
     display: none;
   }
 
+  /* contents */  
+  .content__middle {
+    padding:  75px 0px;
+  }
 
   /* collection */
   #collection .nextbox {
@@ -777,12 +790,17 @@
   #collection.observer .tab__text {
     opacity: 1;
     transform: translateY(0px);
+    margin-top: 30px;
   }
 
-  #collection.observer .tab__swiper .swiper {
-    opacity: 1;
-    transform: translateY(0px);
-}
+  /* swiper */
+  .tab--web{
+    display: none;
+  }
+
+  .tab--mobile {
+    display: block;
+  }
 
 
 }
