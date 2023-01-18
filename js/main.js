@@ -654,7 +654,7 @@ topbtn_ob.forEach(el => topbtn_observer.observe(el));
 const options = {
   root: null,
   rootMargin: "0px",
-  threshold: .3,
+  threshold: .25,
 }
 const observer = new IntersectionObserver(entries => {
 
