@@ -78,14 +78,6 @@
     background-image: url(../images/section/banner/oreian_1500.png);
   }
 
-  /* si banner pagiantion */
-  #banner .swiper-horizontal>.swiper-pagination-bullets,
-  .swiper-pagination-bullets.swiper-pagination-horizontal,
-  .swiper-pagination-custom,
-  .swiper-pagination-fraction {
-    display: block;
-  }
-
   /* story */
   #story.observer .mySwiper-story {
     width: 500px;
@@ -107,16 +99,28 @@
 
   /* collection */
   #collection.observer .tab__swiper .swiper {
-    width: 90%;
+    width: calc(100% - 180px);
     height: unset;
   }
 
-  .tab__swiper {
+  #collection .tab__swiper {
     height: auto;
   }
 
+  #collection .navi-prev {
+    top: calc(50% + 40px);
+  }
+
+  #collection .navi-next {
+    top: calc(50% + 40px);
+  }
+
+  #collection .svg-text {
+    color: #666;
+  }
+
   #collection.observer .tab__swiper .swiper-scrollbar.swiper-scrollbar-horizontal {
-    width: 90%;
+    width: calc(100% - 180px);
   }
 
   /* news */
@@ -146,6 +150,7 @@
   }
 
   .swiper-news-box .swiper-news-bullet {
+    width: 240px;
     right: 70px;
   }
 
@@ -747,6 +752,15 @@
 
   .slide-03 {
     background-image: url('../images/section/banner/oreian_768.png');
+  }
+
+  
+  /* si banner pagiantion */
+  #banner .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    display: block;
   }
 
   /* story */

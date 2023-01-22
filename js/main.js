@@ -78,7 +78,7 @@ searchclose.addEventListener("click", (event) => {
 
   setTimeout(() => {
     searchbox.classList.remove('show');
-  }, 1000);
+  }, 500);
 });
 
 searchbackground.addEventListener('click', (event) => {
@@ -88,7 +88,7 @@ searchbackground.addEventListener('click', (event) => {
 
   setTimeout(() => {
     searchbox.classList.remove('show');
-  }, 1000);
+  }, 500);
 
 })
 
@@ -495,7 +495,7 @@ var swiperBullet = new Swiper(".mySwiper-story", {
 // *** SI COLLECTION ***
 // swiper new
 var swiper__new = new Swiper(".mySwiper-new", {
-  spaceBetween: 50,
+  spaceBetween: 100,
   speed: 1000,
   scrollbar: {
     el: ".new-scroll",
@@ -527,7 +527,7 @@ var swiper__best = new Swiper(".mySwiper-best", {
 // tab swiper z-index 
 const tab__btn = document.querySelectorAll('.tab__text>a');
 const tab__slide = document.querySelectorAll('.tab__swiper');
-const tab_M_inner = document.querySelectorAll(".tab__mobile--inner"); 
+const tab_M_inner = document.querySelectorAll(".tab__mobile--inner");
 
 for (let i = 0; i < tab__btn.length; i++) {
   tab__btn[i].addEventListener('click', (e) => {
@@ -568,12 +568,6 @@ var swiperBullet = new Swiper(".mySwiper-news", {
 });
 
 
-// maps__searchBTN
-const maps__search = document.querySelector('.maps__input--btn');
-maps__search.addEventListener('click', () => {
-  alert('매장명 및 지역명을 입력해주세요.');
-});
-
 //  *** footer family menu ***
 const family__open = document.querySelector(".footer__open>a");
 const family__close = document.querySelector(".footer__close");
@@ -593,10 +587,11 @@ family__close.addEventListener('click', (e) => {
 // *** top button event ***
 const topbtn = document.getElementById('topbtn');
 const topbtn__text = document.querySelector('.top--move');
-topbtn__text.onclick = (e) => {
-  e.preventDefault();
+topbtn__text.addEventListener('click', () => {  
+  console.log('hello');
   window.scrollTo({ top: 0, behavior: "smooth" });
-}
+});
+
 
 const topbtn__open = document.querySelector('.side--open');
 const topbtn__close = document.querySelector('.side--close');
@@ -668,19 +663,16 @@ const observer = new IntersectionObserver(entries => {
 const titleList = document.querySelectorAll('.observer');
 titleList.forEach(el => observer.observe(el));
 
-
-// 반드시 지울것 = 새로고침 시 상단 이동 코드임🎈
 // *** browser refresh ***
-
-// window.onload = function () {
-//   body.classList.remove('scroll-down');
-//   setTimeout(function () {
-//     titleList.forEach((items) => {
-//       items.classList.remove('active');
-//     });
-//     scrollTo(0, 0);
-//   }, 100);
-// }
+window.onload = function () {
+  body.classList.remove('scroll-down');
+  setTimeout(function () {
+    titleList.forEach((items) => {
+      items.classList.remove('active');
+    });
+    scrollTo(0, 0);
+  }, 100);
+}
 
 
 
